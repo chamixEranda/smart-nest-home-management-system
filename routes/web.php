@@ -20,3 +20,19 @@ Route::get('/', function () {
 Route::get('/about-us', function () {
     return view('about-us');
 });
+
+Route::get('/login', function () {
+    return view('auth.login');
+});
+
+Route::get('/signup', function () {
+    return view('auth.register');
+});
+
+Route::get('/pricing', function () {
+    return view('pricing');
+});
+
+Route::get('/dashboard', function () {
+    return view('admin-views.dashboard');
+});
