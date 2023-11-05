@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+:root{
+    --primary: #7700AF;
+    --primary_hover: #A455C9;
+    --primary_hr_color: #d3d0d0;
+    --primary_button_radius: 25px;
+    --primary_card_radius: 5px;
+    --primary_button_colors: #7700AF;
+    --white_clr: #fff;
+    --light_gray_clr: #e0e0e0;
+    --primary_font_family: 'Roboto', sans-serif;
+}
+h1{
+    font-size: 56px;
+    font-weight: 700;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+    overflow-x: hidden;
+}
+.bg-body-tertiary{
+    background: rgb(119,0,175) !important;
+    background: linear-gradient(279deg, rgba(119,0,175,1) 0%, rgba(119,0,175,1) 35%, rgba(164,85,201,1) 100%) !important;
+}
+.nav-link{
+    color: var(--light_gray_clr) !important;
+    text-transform: uppercase !important;
+}
+.navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
+    color: var(--white_clr) !important;
+}
+.nav-item{
+    border-right: 1px solid var(--white_clr);
+    padding: 0px 8px;
+}
+.home_section{
+    padding: 10rem 0rem;
+    color: var(--white_clr);
+}
+.home_section::before {
+    content: "";
+    background-image: url('/assets/img/home.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.about_section{
+    padding: 10rem 0rem;
+    color: var(--white_clr);
+}
+.about_section::before {
+    content: "";
+    background-image: url('/assets/img/about.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: brightness(0.7);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
