@@ -22,13 +22,13 @@
                     <a class="nav-link" href="#">Meal Planning</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Relationship Management</a>
+                    <a class="nav-link" href="{{ url('/pricing') }}">Relationship Management</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Profile</a>
+                    <a class="nav-link" href="{{ url('/login') }}">Profile</a>
                 </li>
             </ul>
         </div>
