@@ -22,4 +22,9 @@
   'subscribe' => 'Subscribe',
   'basic' => 'Basic',
   'yearly' => 'Yearly',
+  'admin_login' => 'Admin login',
+  'admin' => 'Admin',
+  'sign_in' => 'Sign in',
+  'sign in' => 'Sign in',
+  'remember_me' => 'Remember me',
 );
