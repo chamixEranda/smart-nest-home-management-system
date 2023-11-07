@@ -13,26 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
+
+Route::group(['middlware' => 'preventBackHistory'], function() {
+
+    Route::get('/', 'Website\HomeController@index')->name('home');
+    Route::get('about-us', 'Website\HomeController@about_us')->name('about-us');
+
+    Route::get('login', 'Website\Auth\LoginController@getLogin')->name('login');
+    Route::post('login-check', 'Website\Auth\LoginController@loginCheck')->name('login-check');
+
+    Route::get('signup', 'Website\Auth\RegisterController@getSignup')->name('signup');
+    Route::post('signup-create', 'Website\Auth\RegisterController@signupCreate')->name('login-create');
 });
 
-Route::get('/about-us', function () {
-    return view('about-us');
+Route::group(['middleware' => 'auth'], function () {
+    Route::post('/logout','Website\Auth\LoginController@log_out')->name('logout');
 });
-
-Route::get('/login', function () {
-    return view('auth.login');
-});
-
-Route::get('/signup', function () {
-    return view('auth.register');
-});
-
 Route::get('/pricing', function () {
     return view('pricing');
-});
-
-Route::get('/dashboard', function () {
-    return view('admin-views.dashboard');
 });

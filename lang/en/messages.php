@@ -27,4 +27,8 @@
   'sign_in' => 'Sign in',
   'sign in' => 'Sign in',
   'remember_me' => 'Remember me',
+  'already_have_an_account' => 'Already have an account',
+  'log_in' => 'Log in',
+  'invalid_credentials' => 'Invalid credentials',
+  'you_are_logged_in' => 'You are logged in',
 );

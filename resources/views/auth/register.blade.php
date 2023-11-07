@@ -15,7 +15,8 @@
                 
                 </div>
                 <div class="col-md-8 signup_form_fill">
-                    <form action="" autocomplete="off">
+                    <form action="javascript:" method="POST" autocomplete="off" id="registration_form">
+                        @csrf
                         <h2>{{ translate('messages.sign_up') }}</h2>
                         <div class="row">
                             <div class="col-md-6">
@@ -64,7 +65,18 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn login_button">{{ translate('messages.sign_up') }}</button>
+                        <div class="text-center mt-2">
+                            <span class="buttonPreloader btn outline small my-0" style="display: none">
+                                <img src="{{ asset('assets/img/btn-preloader.gif') }}" alt="" style="width: 25px;height:25px;margin-left:auto;margin-right:auto;display:inline"> Please Wait 
+                            </span>
+                            <button type="submit" id="Registerbtn" class="btn login_button mt-0">{{ translate('messages.sign_up') }}</button>
+                        </div>
+                        
+                        <div class="login_register text-center my-3">
+                            <p>{{ translate('messages.already_have_an_account') }}?
+                                <a class="text-dark" href="{{ route('login') }}">{{ translate('messages.log_in') }}</a>
+                            </p>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -73,3 +85,8 @@
 </section>
     
 @endsection
+@push('scripts')
+<script>
+    
+</script>
+@endpush

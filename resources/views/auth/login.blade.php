@@ -6,11 +6,12 @@
             <div class="col-md-12  d-flex justify-content-center">
                 <div class="row">
                     <div class="login_wrapper">
-                        <div class="login_card">
+                        <div class="login_card w-100 p-4">
                             <div class="img-fluid">
                                 <img src="{{ asset('assets/img/logo white.png') }}" alt="SmartNest Logo" width="160">    
                             </div>
-                            <form action="" autocomplete="off">
+                            <form action="javascript:" method="POST" autocomplete="off" id="user_login_form">
+                                @csrf
                                 <div class="input_box">
                                     <span class="icon"><ion-icon name="mail"></ion-icon></span>
                                     <input type="email" name="email" required>
@@ -24,10 +25,15 @@
                                 <div class="remember-forgot text-end">
                                     <a href="">{{ translate('messages.forgot_password') }}?</a>
                                 </div>
-                                <button type="submit" class="btn login_button">{{ translate('messages.login') }}</button>
-                                <div class="login_register my-3">
+                                <div class="text-center mt-2">
+                                    <span class="buttonPreloader btn outline small my-0" style="display: none">
+                                        <img src="{{ asset('assets/img/btn-preloader.gif') }}" alt="" style="width: 25px;height:25px;margin-left:auto;margin-right:auto;display:inline"> Please Wait 
+                                    </span>
+                                    <button type="submit" class="btn login_button" id="LoginformBtn">{{ translate('messages.login') }}</button>
+                                </div>
+                                <div class="login_register text-center my-3">
                                     <p>{{ translate('messages.dont_have_an_account') }}?
-                                        <a href="{{ url('/signup') }}">{{ translate('messages.sign_up') }}</a>
+                                        <a href="{{ route('signup') }}">{{ translate('messages.sign_up') }}</a>
                                     </p>
                                 </div>
                             </form>      

@@ -10,10 +10,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="{{ url('/') }}">Home</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" aria-current="page" href="{{ route('home') }}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link {{ request()->is('about-us') ? 'active' : '' }}" href="{{ url('/about-us') }}">About</a>
+                    <a class="nav-link {{ request()->is('about-us') ? 'active' : '' }}" href="{{ route('about-us') }}">About</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Finance</a>
@@ -27,9 +27,22 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact Us</a>
                 </li>
+                
+                @if (auth()->check())
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/login') }}">Profile</a>
+                    <a class="nav-link" href="{{ route('login') }}">Profile</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
+                        Log Out</a></li>
+                    <form action="{{ route('logout') }}" method="POST" class="d-none" id="logout-form">@csrf</form>
+                </li>
+                @else
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                </li>
+                @endif
+                
             </ul>
         </div>
     </div>
