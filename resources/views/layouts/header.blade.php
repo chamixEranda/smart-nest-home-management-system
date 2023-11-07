@@ -22,7 +22,7 @@
                     <a class="nav-link" href="#">Meal Planning</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url('/pricing') }}">Relationship Management</a>
+                    <a class="nav-link" href="{{ route('pricing') }}">Relationship Management</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Contact Us</a>

@@ -14,6 +14,10 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function() {
     Route::group(['middleware' => ['admin']], function () {
         //dashboard
         Route::get('/', 'DashboardController@index')->name('dashboard');
+
+        Route::resource('subscription', 'SubscriptionController');
+
+        Route::resource('service', 'ServiceController');
     });
 });
 
