@@ -24,11 +24,11 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
 
     Route::get('signup', 'Website\Auth\RegisterController@getSignup')->name('signup');
     Route::post('signup-create', 'Website\Auth\RegisterController@signupCreate')->name('login-create');
+
+    Route::get('pricing', 'Website\SubscriptionController@index')->name('pricing');
 });
 
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout','Website\Auth\LoginController@log_out')->name('logout');
-});
-Route::get('/pricing', function () {
-    return view('pricing');
+    Route::get('/pricing-checkout','Website\SubscriptionController@checkout')->name('pricing-checkout');
 });

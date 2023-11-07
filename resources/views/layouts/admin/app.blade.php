@@ -17,6 +17,12 @@
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <!--style css -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/styles.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/dataTables.checkboxes.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/select.bootstrap4.min.css') }}">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 <body>
     <div class="page-wrapper" id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full"
@@ -39,6 +45,42 @@
     <script src="{{ asset('assets/admin/js/dashboard.js') }}"></script>
     <script src="{{asset('assets/admin/js/theme.min.js')}}"></script>
     <script src="{{asset('assets/admin/js/toastr.js')}}"></script>
+    <script src="{{asset('assets/admin/js/sweet_alert.js')}}"></script>
+    
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/jquery.dataTables.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/dataTables.bootstrap4.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/dataTables.buttons.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/jszip.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/buttons.bootstrap4.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/buttons.colVis.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/buttons.html5.min.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/buttons.printnew.js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/sum().js') ?>"></script>
+    <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/dataTables.checkboxes.min.js') ?>"></script>
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+
+    <script>
+        function form_alert(id, message) {
+        Swal.fire({
+            title: '{{ translate('messages.Are you sure?') }}',
+            text: message,
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: 'default',
+            confirmButtonColor: '#5D87FF',
+            cancelButtonText: '{{ translate('messages.no') }}',
+            confirmButtonText: '{{ translate('messages.Yes') }}',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                $('#'+id).submit()
+            }
+        })
+    }
+    </script>
+    @stack('script')
+    
+    {!! Toastr::message() !!}
     
 </body>
 </html>

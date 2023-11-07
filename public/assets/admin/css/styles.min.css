@@ -19863,6 +19863,62 @@ fieldset:disabled .btn {
     height: 8px
 }
 
+.page-header{
+    padding-bottom: 10px;
+}
+
+.page-header-title {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin: 0;
+    text-transform: capitalize;
+    margin-bottom: 8px;
+}
+
+.page-header-title > span:not(:first-child) {
+    margin-left: 10px;
+}
+
+.page-header-title .page-header-icon img {
+    width: 30px;
+    height: 30px;
+    -o-object-fit: contain;
+    object-fit: contain;
+    -o-object-position: left center;
+    object-position: left center;
+}
+
+.btn--container {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -8px;
+}
+
+.btn--reset {
+    color: var(--bs-dark) !important;
+    background: #f3f4f5 !important;
+    border-color: #f3f4f5 !important;
+}
+
+.btn--container > * {
+    margin: 8px;
+}
+
+.dt-buttons{
+    display: block !important;
+    text-align: end;
+    margin-top: 10px;
+}
+
+.valitation-error{
+    color: var(--bs-red);
+    font-style: 0.6em;
+    font-weight: 600;
+}
+
 @media (max-width:991.98px) {
     .app-header .navbar {
         -ms-flex-wrap: nowrap;
