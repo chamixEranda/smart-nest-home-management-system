@@ -19919,6 +19919,86 @@ fieldset:disabled .btn {
     font-weight: 600;
 }
 
+.img--vertical {
+    aspect-ratio: 3;
+    width: 100%;
+    max-width: 400px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border: 1px solid #f4f4f4;
+    border-radius: 10px;
+}
+.custom-file-label {
+    height: 45px;
+    line-height: 27px;
+    background: transparent;
+    z-index: 9;
+}
+.custom-file-input {
+    opacity: 1;
+    padding: 1px 0 1px 11px;
+    line-height: 34px;
+    border-color: var(--border-clr) !important;
+}
+.custom-file, .custom-file-input {
+    height: 45px;
+}
+.custom-file {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    height: calc(1.6em + 1.21875rem);
+    margin-bottom: 0;
+}
+.custom-file-label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1;
+    height: calc(1.6em + 1.21875rem);
+    padding: 0.54688rem 0.875rem;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #1e2022;
+    background-color: #fff;
+    border: 0.0625rem solid #e7eaf3;
+    border-radius: 0.3125rem;
+}
+.custom-file-label::after {
+    height: 43px;
+    line-height: 25px;
+    right: unset;
+    left: 1px;
+    content: "Choose File" !important;
+    background: #fff;
+    border: none !important;
+    top: 0;
+}
+
+.img--110 {
+    width: 110px;
+}
+.img--65, .img--60, .img--70, .img--75, .img--80, .img--90, .img--100, .img--110, .img--120, .img--130, .img--200 {
+    aspect-ratio: 1;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border: 1px solid #f4f4f4;
+    border-radius: 10px;
+}
+.select2-results__options {
+    max-height: 200px;
+    overflow-y: auto;
+}
+.select2-container .select2-selection--single {
+    height: 40px !important;
+    padding: 0.54688rem 1.875rem 0.54688rem 0.875rem;
+    border: 0.0625rem solid #e7eaf3;
+    font-size: 0.875rem;
+    font-weight: 400;
+    border-radius: 0.3125rem;
+}
+
 @media (max-width:991.98px) {
     .app-header .navbar {
         -ms-flex-wrap: nowrap;

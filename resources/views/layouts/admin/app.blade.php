@@ -18,6 +18,7 @@
     <!--style css -->
     <link rel="stylesheet" href="{{ asset('assets/admin/css/styles.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/buttons.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/admin/libs/datatable/dataTables.checkboxes.css') }}">
@@ -46,6 +47,7 @@
     <script src="{{asset('assets/admin/js/theme.min.js')}}"></script>
     <script src="{{asset('assets/admin/js/toastr.js')}}"></script>
     <script src="{{asset('assets/admin/js/sweet_alert.js')}}"></script>
+    <script src="{{asset('assets/admin/js/select2.min.js')}}"></script>
     
     <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/jquery.dataTables.min.js') ?>"></script>
     <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/dataTables.bootstrap4.min.js') ?>"></script>
@@ -59,6 +61,27 @@
     <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/dataTables.checkboxes.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 
+    <script>
+        if (@json(Session::get('success'))) {
+            toastr.success(@json(Session::get('success')), {
+                CloseButton: true,
+                ProgressBar: true,
+            });
+        }
+
+        if (@json(Session::get('error'))) {
+            toastr.error(@json(Session::get('error')), {
+                CloseButton: true,
+                ProgressBar: true,
+            });
+        }
+
+
+        $( ".js-select2-custom" ).select2({
+            theme: "bootstrap4"
+            
+        });
+    </script>
     <script>
         function form_alert(id, message) {
         Swal.fire({
