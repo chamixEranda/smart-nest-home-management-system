@@ -49,7 +49,7 @@ class SubscriptionController extends Controller
 
         DB::commit();
 
-        Toastr::success(translate('messages.subscription_added_successfully'), 'Success');
+        Toastr::success(translate('messages.subscription_added_successfully'), 'success');
         return back();
     }
 

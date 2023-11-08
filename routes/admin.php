@@ -17,7 +17,7 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function() {
 
         Route::resource('subscription', 'SubscriptionController');
 
-        Route::resource('service', 'ServiceController');
+        Route::resource('business-settings', 'BusinessSettingController');
     });
 });
 

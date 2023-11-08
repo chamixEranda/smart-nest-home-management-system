@@ -26,6 +26,8 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
     Route::post('signup-create', 'Website\Auth\RegisterController@signupCreate')->name('login-create');
 
     Route::get('pricing', 'Website\SubscriptionController@index')->name('pricing');
+
+    Route::get('contact-us', 'Website\HomeController@contact_us')->name('contact-us');
 });
 
 Route::group(['middleware' => 'auth'], function () {
