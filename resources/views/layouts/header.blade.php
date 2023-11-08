@@ -19,13 +19,13 @@
                     <a class="nav-link" href="#">Finance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Meal Planning</a>
+                    <a class="nav-link" href="#our_services">Meal Planning</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pricing') }}">Relationship Management</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Contact Us</a>
+                    <a class="nav-link {{ request()->is('contact-us') ? 'active' : '' }}" href="{{ route('contact-us') }}">Contact Us</a>
                 </li>
                 
                 @if (auth()->check())
@@ -39,7 +39,7 @@
                 </li>
                 @else
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}">Login</a>
+                    <a class="nav-link {{ request()->is('login') ? 'active' : '' }}" href="{{ route('login') }}">Login</a>
                 </li>
                 @endif
                 

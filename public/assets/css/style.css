@@ -37,6 +37,7 @@ body{
 }
 .navbar-nav .nav-link.active, .navbar-nav .nav-link.show{
     color: var(--white_clr) !important;
+    font-weight: 500;
 }
 .nav-item{
     border-right: 1px solid var(--white_clr);
@@ -57,7 +58,7 @@ body{
 .about_section{
     padding: 10rem 0rem;
     color: var(--white_clr);
-    background-image: url('/assets/img/login.png');
+    background-image: url('/assets/img/login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,7 +68,7 @@ body{
     align-items: center;
 }
 .login_section{
-    background-image: url('/assets/img/login.png');
+    background-image: url('/assets/img/login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -272,10 +273,88 @@ body{
 
 }
 .pricing_section{
-    background-image: url('/assets/img/login.png');
+    background-image: url('/assets/img/login.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.our_services .card {
+    cursor: pointer
+}
+
+
+.our_services .hd {
+    font-size: 2em;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+
+.our_services .card.hover,
+.our_services .card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, .2)
+}
+
+.our_services .img {
+    margin-bottom: 35px;
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222)
+}
+
+.our_services .card-title {
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.our_services button.focus,
+.our_services button:focus {
+    outline: 0;
+    box-shadow: none !important
+}
+
+.our_services .ft {
+    margin-top: 25px
+}
+
+.our_services .chk {
+    margin-bottom: 5px
+}
+
+.our_services .rck {
+    margin-top: 20px;
+    padding-bottom: 15px
+}
+
+.our_services {
+    background-color: lightcyan !important
+}
+
+.contact_upper_contact{
+    background-image:
+    linear-gradient(2.45deg, #5A0085 34.46%, rgba(255, 0, 184, 0) 97.91%), url('/assets/img/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.contact-card h5{
+    text-align: center;
+    font-weight: 600;
+}
+.contact-card img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.contact_down_section{
+    height: 50vh;
     display: flex;
     justify-content: center;
     align-items: center;
