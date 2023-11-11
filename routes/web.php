@@ -33,4 +33,12 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
 Route::group(['middleware' => 'auth'], function () {
     Route::post('/logout','Website\Auth\LoginController@log_out')->name('logout');
     Route::get('/pricing-checkout','Website\SubscriptionController@checkout')->name('pricing-checkout');
+    
+    Route::post('/pricing-checkout/store','Website\SubscriptionController@checkoutStore')->name('pricing-checkout.store');
+
 });
+
+Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
+    Route::get('/', 'Website\MealplanController@index')->name('index');
+});
+

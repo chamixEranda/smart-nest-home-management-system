@@ -10,6 +10,12 @@
     --light_gray_clr: #e0e0e0;
     --primary_font_family: 'Roboto', sans-serif;
 }
+.btn-primary{
+    background: #000 !important;
+    color: var(--white_clr) !important;
+    font-weight: 600 !important;
+    border: #000 !important;
+}
 h1{
     font-size: 56px;
     font-weight: 700;
@@ -264,6 +270,11 @@ body{
     background: linear-gradient(to bottom, var(--primary), var(--primary_hover));
 
 }
+.pricing-grid .box.basic .price{
+    color: #000 !important;
+    
+
+}
 .pricing-grid .box.premium .title{
     color: var(--white_clr);
 }
@@ -360,6 +371,64 @@ body{
     align-items: center;
 }
 
+.checkout-section{
+    background-image: url('/assets/img/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.sidebar-pricing{
+    background-color: var(--white_clr) !important;
+    overflow: hidden;
+    float: left;
+    position: relative;
+    height: 100vh;
+}
+.sidebar-pricing img{
+    width: 100%;
+    height: auto;
+    display: block;
+    position: absolute;
+    bottom: 0;
+}
+.sidebar-pricing .title h4{
+    font-size: 1.8em !important;
+}
+
+.subscription-list .basic{
+    background: #007955;
+    border: #007955;
+    padding: 25px 22px;
+    color: var(--white_clr);
+    font-weight: 600;
+}
+.subscription-list .basic:hover{
+    background: #03b37e !important;
+    border: #03b37e;
+}
+.subscription-list .premium{
+    background: #000;
+    border: #000;
+    padding: 25px 22px;
+    color: var(--white_clr);
+    font-weight: 600;
+}
+.subscription-list .premium:hover{
+    background: #2f2f2f !important;
+    border: #2f2f2f;
+}
+.subscription-list .yearly{
+    background: #004585;
+    border: #004585 !important;
+    padding: 25px 22px;
+    color: var(--white_clr) !important;
+    font-weight: 600;
+}
+.subscription-list .yearly:hover{
+    background: #025fb6 !important;
+    border: #004585 !important;
+}
 /* media query */
 @media (max-screen:804px) {
     .pricing-grid{

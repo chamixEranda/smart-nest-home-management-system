@@ -100,4 +100,11 @@
   'genaral' => 'Genaral',
   'save_information' => 'Save information',
   'successfully_updated' => 'Successfully updated',
+  'card_number' => 'Card number',
+  'expiry_date' => 'Expiry date',
+  'CVV' => 'CVV',
+  'sub_total' => 'Sub total',
+  'discount' => 'Discount',
+  'total' => 'Total',
+  'Subscribe_&_Checkout' => 'Subscribe & Checkout',
 );
