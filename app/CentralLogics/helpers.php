@@ -2,6 +2,8 @@
 namespace App\CentralLogics;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Carbon;
+use App\Models\BusinessSetting;
+use App\Models\Currency;
 
 class Helpers
 {
@@ -49,6 +51,17 @@ class Helpers
         }
 
         return $imageName;
+    }
+
+    public static function currency_code()
+    {
+        return BusinessSetting::where(['key' => 'currency'])->first()->value;
+    }
+
+    public static function currency_symbol()
+    {
+        $currency_symbol = Currency::where(['currency_code' => Helpers::currency_code()])->first()->currency_symbol;
+        return $currency_symbol;
     }
 
 }

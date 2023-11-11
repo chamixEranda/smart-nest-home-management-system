@@ -16,6 +16,12 @@ class SubscriptionController extends Controller
 
     public function checkout()
     {
-        return view('pricing-checkout');
+        $lims_subscription_list = Subscription::active()->get();
+        return view('pricing-checkout',compact('lims_subscription_list'));
+    }
+
+    public function checkoutStore(Request $request)
+    {
+        dd($request);
     }
 }

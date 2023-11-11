@@ -15,7 +15,7 @@
         </h1>
     </div>
     <!-- End Page Header -->
-    <form action="{{ route('admin.business-settings.store') }}" method="POST" autocomplete="off">
+    {!! Form::open(['route' => 'admin.business-settings.store', 'method' => 'post', 'files' => true, 'autocomplete' => 'off']) !!}
         @csrf
         <div class="row g-3">
             <div class="col-lg-12">
@@ -119,8 +119,7 @@
                                     </center>
                                     <div class="custom-file">
                                         <input type="file" name="logo" id="customFileEg1"
-                                            class="custom-file-input"
-                                            accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*">
+                                            >
                                         <label class="custom-file-label"
                                             for="customFileEg1">{{ translate('messages.choose') }}
                                             {{ translate('messages.file') }}</label>
@@ -161,7 +160,7 @@
                 </div>
             </div>
         </div>
-    </form>
+    {!! Form::close() !!}
 </div>
 
 @endsection

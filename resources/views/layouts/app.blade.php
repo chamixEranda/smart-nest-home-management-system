@@ -16,6 +16,7 @@
           integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="{{ asset('assets/css/mobiscroll.jquery.min.css') }}" />
     <!--style css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
 </head>
