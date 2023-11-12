@@ -6,6 +6,18 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
 <script src="{{ asset('assets/js/mobiscroll.jquery.min.js') }}"></script>
+<script src="{{asset('assets/admin/js/toastr.js')}}"></script>
+{!! Toastr::message() !!}
+@if ($errors->any())
+    <script>
+      @foreach($errors->all() as $error)
+      toastr.error('{{$error}}', Error, {
+        CloseButton: true,
+        ProgressBar: true
+      });
+      @endforeach
+    </script>
+@endif
 <script>
     var ToastMixin = Swal.mixin({
         toast: true,

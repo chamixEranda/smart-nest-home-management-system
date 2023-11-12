@@ -35,6 +35,9 @@
                                         Management tools. Budget effectively, track expenses, and build a secure financial
                                         future for you and your family"</small> </p>
                             </div>
+                            <div class="card-button">
+                                <a href="" class="btn-primary">Find More</a>
+                            </div>
                         </div>
                     </a>
                 </div>
@@ -48,6 +51,9 @@
                                 <p> <small class="text-muted"> "Simplify meal planning and transform your kitchen with
                                         SmartNest's Meal Planning features. Plan nutritious meals, organize recipes, and
                                         generate grocery lists effortlessly" </small> </p>
+                            </div>
+                            <div class="card-button">
+                                <a href="{{ route('meal-planning.index') }}" class="btn-primary">Find More</a>
                             </div>
                         </div>
                     </a>
@@ -64,6 +70,9 @@
                                         Management tools. Set goals, manage family projects, and keep track of
                                         memorable occasions"
                                     </small> </p>
+                            </div>
+                            <div class="card-button">
+                                <a href="" class="btn-primary">Find More</a>
                             </div>
                         </div>
                     </a>
