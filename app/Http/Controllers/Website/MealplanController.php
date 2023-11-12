@@ -9,6 +9,12 @@ class MealplanController extends Controller
 {
     public function index()
     {
-        return view('website.meal-planning.index');
+        return view('website.meal-planning.meal-plan.index');
     }
+
+    public function mealPage()
+    {
+        return view('website.meal-planning.meal-plan.meal-plan');
+    }
+    
 }
