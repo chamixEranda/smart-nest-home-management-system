@@ -19,7 +19,7 @@
                     <a class="nav-link" href="#">Finance</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('meal-planning.index') }}">Meal Planning</a>
+                    <a class="nav-link {{ request()->is('meal-planning') ? 'active' : '' }}" href="{{ route('meal-planning.index') }}">Meal Planning</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pricing') }}">Relationship Management</a>

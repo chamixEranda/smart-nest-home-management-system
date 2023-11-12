@@ -19,6 +19,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/mobiscroll.jquery.min.css') }}" />
     <!--style css -->
     <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/toastr.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/admin/css/toastr.css') }}">
 </head>
 <body>
     @include('layouts.header')

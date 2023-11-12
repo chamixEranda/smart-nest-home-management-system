@@ -107,4 +107,11 @@
   'discount' => 'Discount',
   'total' => 'Total',
   'Subscribe_&_Checkout' => 'Subscribe & Checkout',
+  'your_subscription_successfully_activated' => 'Your subscription successfully activated',
+  'Meal_Planner' => 'Meal Planner',
+  'Recipes' => 'Recipes',
+  'Grocery_List' => 'Grocery List',
+  'recipes' => 'Recipes',
+  'grocery_list' => 'Grocery list',
+  'add_new_recipe' => 'Add new recipe',
 );

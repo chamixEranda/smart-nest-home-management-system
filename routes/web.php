@@ -28,6 +28,11 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
     Route::get('pricing', 'Website\SubscriptionController@index')->name('pricing');
 
     Route::get('contact-us', 'Website\HomeController@contact_us')->name('contact-us');
+
+    Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
+        Route::get('/', 'Website\MealplanController@index')->name('index');
+        Route::get('/meal', 'Website\MealplanController@mealPage')->name('meal');
+    });
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -36,9 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::post('/pricing-checkout/store','Website\SubscriptionController@checkoutStore')->name('pricing-checkout.store');
 
-});
+    Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
+        Route::resource('recipes', 'Website\RecipeController');
+        Route::resource('grocery', 'Website\GroceryController');
+    });
 
-Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
-    Route::get('/', 'Website\MealplanController@index')->name('index');
 });
-

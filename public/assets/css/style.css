@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
 :root{
     --primary: #7700AF;
     --primary_hover: #A455C9;
@@ -15,6 +16,13 @@
     color: var(--white_clr) !important;
     font-weight: 600 !important;
     border: #000 !important;
+    border-radius: 0px !important;
+    padding: 10px;
+    /* padding-bottom: 10px; */
+}
+.btn-primary:hover{
+    background: #2c2c2c !important;
+    border: #2c2c2c !important;
 }
 h1{
     font-size: 56px;
@@ -30,7 +38,7 @@ a{
 	box-sizing: border-box;
 }
 body{
-	font-family: 'Source Sans Pro', sans-serif;
+	font-family: 'Roboto', sans-serif;
     overflow-x: hidden;
 }
 .bg-body-tertiary{
@@ -429,6 +437,133 @@ body{
     background: #025fb6 !important;
     border: #004585 !important;
 }
+
+.meal-section{
+    color: var(--white_clr);
+    background-image: url('/assets/img/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.meal-header{
+    height: 210px;
+    flex-shrink: 0;
+    border-radius: 40px;
+    border: 2px solid #000;
+    background: url('/assets/img/brush meal.png'), lightgray 0px 0px / 100% 209.407% no-repeat;
+}
+.meal-platte{
+    width: 320px;
+    height: 228px;
+    flex-shrink: 0;
+    background: url('/assets/img/meal plate.png');
+    border-radius: 40px;
+    margin-left: auto;
+}
+.meal-header h3{
+    color: #000;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.41);
+    font-size: 54px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    position: absolute;
+    top: 190px;
+    width: 784px;
+    padding: 0px 25px;
+}
+.meal-title h3{
+    color: #000;
+    font-family: Caesar Dressing;
+    font-size: 66px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+.meal-title a{
+    border-radius: 30px;
+    background: #7801B0;
+    color: #000 !important;
+    font-family: Caesar Dressing;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 15px;
+
+}
+.meal-footer{
+    border-radius: 30px;
+    background: linear-gradient(180deg, #14001E 0%, rgba(120, 1, 176, 0.00) 100%);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}
+.meal-footer img{
+    width: 250px
+}
+.big-plate-div{
+    position: absolute;
+    right: 244px;
+    top: 73.5%;
+}
+
+.meal-index-section{
+    background-image: url('/assets/img/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.page-haeder-path h2{
+    color: #000;
+    font-weight: 600 !important;
+    font-size: 1.3em;
+}
+.recipe-card{
+    border-radius: 30px;
+    background: rgba(120, 1, 176, 0.25);
+    padding: 25px;
+    margin: 15px 0px;
+}
+.recipe-card img{
+    width: 250px;
+    object-fit: cover;
+}
+.reciepes-section{
+    background-image: url('/assets/img/login.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 0px
+}
+.reciepe-image{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grocery-list-section {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.773), rgba(0, 0, 0, 0.773)), url('/assets/img/grocery-list.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 10px 0px;
+    /* height: 100%; */
+}
+.ingredient-card{
+    background: transparent !important;
+    color: #fff !important;
+    border: none !important;
+    text-align: center !important
+}
+.ingredient-image img{
+    width: 150px
+}
+.ingredient-image{
+    display: flex;
+    justify-content: center;
+    align-content: center
+}
+
 /* media query */
 @media (max-screen:804px) {
     .pricing-grid{
