@@ -16,5 +16,10 @@ class MealplanController extends Controller
     {
         return view('website.meal-planning.meal-plan.meal-plan');
     }
+
+    public function createMealPlan()
+    {
+        return view('website.meal-planning.meal-plan.create');
+    }
     
 }

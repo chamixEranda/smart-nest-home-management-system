@@ -43,6 +43,10 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
         Route::resource('recipes', 'Website\RecipeController');
+
+        Route::get('/create-meal-plan', 'Website\MealplanController@createMealPlan')->name('create-meal-plan');
+
+        Route::get('grocery/add-ingredients','Website\GroceryController@addIngredients')->name('grocery.add-ingredients');
         Route::resource('grocery', 'Website\GroceryController');
     });
 

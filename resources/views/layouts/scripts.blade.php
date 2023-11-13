@@ -6,7 +6,9 @@
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.9.0/dist/sweetalert2.all.min.js"></script>
 <script src="{{ asset('assets/js/mobiscroll.jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/jquery.multifield.min.js') }}"></script>
 <script src="{{asset('assets/admin/js/toastr.js')}}"></script>
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
 {!! Toastr::message() !!}
 @if ($errors->any())
     <script>
@@ -33,6 +35,24 @@
             toast.addEventListener('mouseleave', Swal.resumeTimer)
         }
     });
+
+    function form_alert(id, message) {
+        Swal.fire({
+            title: '{{ translate('messages.Are you sure?') }}',
+            text: message,
+            type: 'warning',
+            showCancelButton: true,
+            cancelButtonColor: 'default',
+            confirmButtonColor: '#5D87FF',
+            cancelButtonText: '{{ translate('messages.no') }}',
+            confirmButtonText: '{{ translate('messages.Yes') }}',
+            reverseButtons: true
+        }).then((result) => {
+            if (result.value) {
+                $('#'+id).submit()
+            }
+        })
+    }
 
     $('#registration_form').on('submit',function(e) {
         $('#Registerbtn').css('display', 'none');
