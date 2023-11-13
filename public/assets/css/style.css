@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caesar+Dressing&display=swap');
 :root{
     --primary: #7700AF;
     --primary_hover: #A455C9;
@@ -564,6 +565,59 @@ body{
     align-content: center
 }
 
+.img--vertical {
+    aspect-ratio: 3;
+    width: 100%;
+    max-width: 200px;
+    height: 200px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    border: 1px solid #f4f4f4;
+    border-radius: 10px;
+}
+
+.custom-card {
+    --bs-card-spacer-y: 30px;
+    --bs-card-spacer-x: 30px;
+    --bs-card-title-spacer-y: 0.5rem;
+    --bs-card-title-color: #2A3547;
+    --bs-card-subtitle-color: #2A3547;
+    --bs-card-border-width: 0px;
+    --bs-card-border-color: #ebf1f6;
+    --bs-card-border-radius: 7px;
+    --bs-card-box-shadow: rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px;
+    --bs-card-inner-border-radius: 7px;
+    --bs-card-cap-padding-y: 15px;
+    --bs-card-cap-padding-x: 30px;
+    --bs-card-cap-bg: rgba(var(--bs-body-color-rgb), 0.03);
+    --bs-card-cap-color: ;
+    --bs-card-height: ;
+    --bs-card-color: ;
+    --bs-card-bg: var(--bs-body-bg);
+    --bs-card-img-overlay-padding: 1rem;
+    --bs-card-group-margin: 12px;
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    height: var(--bs-card-height);
+    word-wrap: break-word;
+    background-color: var(--bs-card-bg);
+    background-clip: border-box;
+    border: var(--bs-card-border-width) solid var(--bs-card-border-color);
+    border-radius: var(--bs-card-border-radius);
+    -webkit-box-shadow: var(--bs-card-box-shadow);
+    box-shadow: var(--bs-card-box-shadow);
+}
+
+.empty-list-div h3{
+    font-family: Agbalumo !important;
+}
 /* media query */
 @media (max-screen:804px) {
     .pricing-grid{

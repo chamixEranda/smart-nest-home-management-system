@@ -15,6 +15,11 @@ class GroceryController extends Controller
         return view('website.meal-planning.grocery.index');
     }
 
+    public function addIngredients()
+    {
+        return view('website.meal-planning.grocery.add-ingredients');
+    }
+
     /**
      * Show the form for creating a new resource.
      */

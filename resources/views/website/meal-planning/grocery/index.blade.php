@@ -4,10 +4,13 @@
 
 <section class="grocery-list-section">
     <div class="page-haeder-path px-3">
-        <h2 class="text-uppercase text-light"><i class="fas fa-chevron-right"></i> {{ translate('messages.meal_planning') }} <i
+        <h2 class="text-uppercase text-light">{{ translate('messages.meal_planning') }} <i
                 class="fas fa-chevron-right"></i> {{ translate('messages.grocery_list') }}</h2>
     </div>
     <div class="container">
+        <div class="page-button text-end">
+            <a href="{{ route('meal-planning.grocery.add-ingredients') }}" class="btn btn-primary">{{ translate('messages.add_ingredients') }}</a>
+        </div>
         <div class="grocery-items py-3">
             <div class="row row-cols-4 g-4">
                 <div class="col">

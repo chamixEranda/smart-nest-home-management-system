@@ -19,7 +19,7 @@
             <h3>
                 YOUR MEALS, <br>WHEN YOU NEED THEM.
             </h3>
-            <a href="">create meal plan</a>
+            <a href="{{ route('meal-planning.create-meal-plan') }}">create meal plan</a>
         </div>
     
         <div class="col-md-12 my-5">
