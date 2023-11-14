@@ -90,6 +90,7 @@ class RecipeController extends Controller
             if (!$check_exists_ingredient) {
                 $new_ingredient = new Ingredient();
                 $new_ingredient->name = $ingredient;
+                $new_ingredient->user_id = auth()->user()->id;
                 $new_ingredient->save();
             }
         }
@@ -156,6 +157,7 @@ class RecipeController extends Controller
             if (!$check_exists_ingredient) {
                 $new_ingredient = new Ingredient();
                 $new_ingredient->name = $ingredient;
+                $new_ingredient->user_id = auth()->user()->id;
                 $new_ingredient->save();
             }
         }
