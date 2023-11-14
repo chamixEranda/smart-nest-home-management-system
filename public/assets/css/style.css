@@ -618,6 +618,26 @@ body{
 .empty-list-div h3{
     font-family: Agbalumo !important;
 }
+
+.page-item a{
+    color: #000 !important;
+    font-weight: 600 !important;
+    border-radius: 50% !important;
+}
+.page-item span{
+    color: #000 !important;
+    font-weight: 600 !important;
+    border-radius: 50% !important;
+}
+.page-item{
+    margin: 0px 3px !important;
+}
+.active>.page-link, .page-link.active {
+    z-index: 3;
+    color: var(--white_clr)!important;
+    background-color: var(--primary)!important;
+    border-color: var(--primary)!important;;
+}
 /* media query */
 @media (max-screen:804px) {
     .pricing-grid{

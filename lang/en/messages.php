@@ -128,4 +128,10 @@
   'no_recipes_to_show' => 'No recipes to show',
   'update_recipe' => 'Update recipe',
   'recipe_updated_successfully' => 'Recipe updated successfully',
+  'no_ingredients_to_show' => 'No ingredients to show',
+  'ingredient_stock_updated' => 'Ingredient stock updated',
+  'add_ingredient' => 'Add ingredient',
+  'Ingredient Image' => 'Ingredient Image',
+  'quantity' => 'Quantity',
+  'ingredient_created_successfully' => 'Ingredient created successfully',
 );

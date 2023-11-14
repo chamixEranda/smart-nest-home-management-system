@@ -16,7 +16,8 @@
         <div class="col-md-12 recipe-card">
             <div class="row">
                 <div class="col-md-4 reciepe-image">
-                    <img src="{{ asset('public/documents/recipes/'.$recipe->image) }}" alt="">
+                    <img src="{{ asset('public/documents/recipes/'.$recipe->image) }}" alt=""
+                    onerror="this.src='{{ asset('assets/img/cooking.png') }}'">
                 </div>
                 <div class="col-md-6">
                     <div class="recipe-name">
