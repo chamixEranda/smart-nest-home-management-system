@@ -61,14 +61,18 @@
             <span>
               <i class="ti ti-category"></i>
             </span>
-            <span class="hide-menu">{{ translate('messages.category') }}</span>
+            <span class="hide-menu">{{  translate('messages.category')  }}</span>
           </a>
-          <a class="sidebar-link" href="{{ route('admin.business-settings.index') }}" aria-expanded="false">
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.meal-type.index') }}" aria-expanded="false">
             <span>
               <i class="ti ti-menu"></i>
             </span>
             <span class="hide-menu">{{ translate('messages.type') }}</span>
           </a>
+        </li>
+        <li class="sidebar-item">
           <a class="sidebar-link" href="{{ route('admin.business-settings.index') }}" aria-expanded="false">
             <span>
               <i class="fa fa-sitemap"></i>

@@ -10,39 +10,23 @@
             <div class="meal-card-body text-center">
                 <div class="mb-4">
                     <h3 class="text-light category-text mx-2">{{ translate('messages.meal') }}: </h3>
+                    @foreach ($lims_category_list as $category)
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        <input class="form-check-input" type="radio" name="meal_category" id="Category-{{ $category->id }}"
                             value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Breakfast</label>
+                        <label class="form-check-label" for="Category-{{ $category->id }}">{{ $category->name }}</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Lunch</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Dinner</label>
-                    </div>
+                    @endforeach
                 </div>
                 <div class="mb-3">
                     <h3 class="text-light category-text mx-2">{{ translate('messages.meal_type') }}: </h3>
+                    @foreach ($lims_type_list as $type)
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1"
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="Type-{{ $type->id }}"
                             value="option1">
-                        <label class="form-check-label" for="inlineRadio1">Breakfast</label>
+                        <label class="form-check-label" for="Type-{{ $type->id }}">{{ $type->name }}</label>
                     </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                            value="option2">
-                        <label class="form-check-label" for="inlineRadio2">Lunch</label>
-                    </div>
-                    <div class="form-check form-check-inline">
-                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3"
-                            value="option3">
-                        <label class="form-check-label" for="inlineRadio3">Dinner</label>
-                    </div>
+                    @endforeach
                 </div>
                 <a href="" class="btn btn-primary w-25">Generate Meal</a>
             </div>
