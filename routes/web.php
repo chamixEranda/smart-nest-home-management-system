@@ -33,6 +33,10 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
         Route::get('/', 'Website\MealplanController@index')->name('index');
         Route::get('/meal', 'Website\MealplanController@mealPage')->name('meal');
     });
+
+    Route::prefix('finance')->name('finance.')->group(function () {
+        Route::get('/', 'Website\FinanceController@index')->name('index');
+    });
 });
 
 Route::group(['middleware' => 'auth'], function () {
@@ -49,6 +53,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::get('grocery/add-ingredients','Website\GroceryController@addIngredients')->name('grocery.add-ingredients');
         Route::post('grocery/update-stock/{id}/{action}', 'Website\GroceryController@updateStock')->name('grocery.update-stock');
         Route::resource('grocery', 'Website\GroceryController');
+    });
+
+    Route::prefix('finance')->name('finance.')->group(function () {
+        Route::get('budgeting', 'Website\FinanceController@budgetingIndex')->name('budgeting');
+        Route::get('incomes-&-expenses', 'Website\FinanceController@budgetTracker')->name('incomes-&-expenses');
+        Route::get('transactions', 'Website\FinanceController@transactionsIndex')->name('transactions');
+
     });
 
 });

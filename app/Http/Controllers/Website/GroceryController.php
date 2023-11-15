@@ -21,11 +21,6 @@ class GroceryController extends Controller
         return view('website.meal-planning.grocery.index',compact('lims_ingredient_data'));
     }
 
-    public function addIngredients()
-    {
-        return view('website.meal-planning.grocery.add-ingredients');
-    }
-
     public function updateStock($id, $action)
     {
         try {
