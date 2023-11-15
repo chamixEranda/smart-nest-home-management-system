@@ -37,7 +37,7 @@
             <span class="hide-menu">{{ translate('messages.subscriptions') }}</span>
           </a>
         </li>
-        <!-- Services -->
+        <!-- Business Setting -->
         <li class="nav-small-cap">
           <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
           <span class="hide-menu">{{ translate('messages.business_settings') }}</span>
@@ -48,6 +48,32 @@
               <i class="fas fa-cogs"></i>
             </span>
             <span class="hide-menu">{{ translate('messages.business_setup') }}</span>
+          </a>
+        </li>
+
+        <!-- Meal Section -->
+        <li class="nav-small-cap">
+          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+          <span class="hide-menu">{{ translate('messages.meal_section') }}</span>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.meal-category.index') }}" aria-expanded="false">
+            <span>
+              <i class="ti ti-category"></i>
+            </span>
+            <span class="hide-menu">{{ translate('messages.category') }}</span>
+          </a>
+          <a class="sidebar-link" href="{{ route('admin.business-settings.index') }}" aria-expanded="false">
+            <span>
+              <i class="ti ti-menu"></i>
+            </span>
+            <span class="hide-menu">{{ translate('messages.type') }}</span>
+          </a>
+          <a class="sidebar-link" href="{{ route('admin.business-settings.index') }}" aria-expanded="false">
+            <span>
+              <i class="fa fa-sitemap"></i>
+            </span>
+            <span class="hide-menu">{{ translate('messages.item') }}</span>
           </a>
         </li>
       </ul>

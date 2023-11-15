@@ -20,7 +20,7 @@
                     <div class=" card card-cover border-0 h-100 overflow-hidden text-white rounded-5 shadow-lg"
                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url('assets/img/meal planner.jpg');background-repeat:no-repeat;background-size:cover">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center">{{
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center text-uppercase">{{
                                 translate('messages.Meal_Planner') }}</h2>
 
                         </div>
@@ -32,7 +32,7 @@
                     <div class="card card-cover h-100 border-0 overflow-hidden text-white rounded-5 shadow-lg"
                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url('assets/img/recepie.jpg');background-repeat:no-repeat;background-size:cover">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center">{{
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center text-uppercase">{{
                                 translate('messages.Recipes') }}
                             </h2>
                         </div>
@@ -44,7 +44,7 @@
                     <div class="card card-cover h-100 border-0 overflow-hidden text-white rounded-5 shadow-lg"
                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url('assets/img/grocery.jpg');background-repeat:no-repeat;background-size:cover">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-shadow-1">
-                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center">{{
+                            <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold text-center text-uppercase">{{
                                 translate('messages.Grocery_List') }}</h2>
                         </div>
                     </div>

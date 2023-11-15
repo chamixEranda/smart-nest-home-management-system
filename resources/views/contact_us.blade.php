@@ -13,21 +13,21 @@
                     <div class="col-md-4">
                         <div class="contact-card">
                             <img src="{{ asset('assets/img/Place Marker.png') }}" alt="">
-                            <h5>No 20, Galle Road, Kollupitiya</h5>
+                            <h5>{{ $business_address ? $business_address->value : 'No 20, Galle Road, Kollupitiya' }}</h5>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="contact-card">
                             <img src="{{ asset('assets/img/Ringing Phone.png') }}" alt="">
-                            <h5>+94 76 889 9990</h5>
+                            <h5>{{ $business_phone ? $business_phone->value : '+94 76 889 9990' }}</h5>
                         </div>
                     </div>
 
                     <div class="col-md-4">
                         <div class="contact-card">
                             <img src="{{ asset('assets/img/Email.png') }}" alt="">
-                            <h5>zfathima.nafha@gmail.com</h5>
+                            <h5>{{ $business_email ? $business_email->value : 'zfathima.nafha@gmail.com' }}</h5>
                         </div>
                     </div>
                 </div>

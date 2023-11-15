@@ -36,7 +36,7 @@
                                         future for you and your family"</small> </p>
                             </div>
                             <div class="card-button">
-                                <a href="" class="btn-primary">Find More</a>
+                                <a href="{{ route('finance.index') }}" class="btn-primary">Find More</a>
                             </div>
                         </div>
                     </a>

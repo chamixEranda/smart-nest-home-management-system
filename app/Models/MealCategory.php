@@ -7,5 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class MealCategory extends Model
 {
-    
+    protected $fillable = [
+        'name',
+        'is_active',
+    ];
+
+    public function scopeActive($query)
+    {
+        return $query->where('is_active', '=', 1);
+    }
 }

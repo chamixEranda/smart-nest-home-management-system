@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Caesar+Dressing&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caesar+Dressing&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caesar+Dressing&family=Italianno&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Caesar+Dressing&family=Italiana&display=swap');
 :root{
     --primary: #7700AF;
     --primary_hover: #A455C9;
@@ -637,6 +639,59 @@ body{
     color: var(--white_clr)!important;
     background-color: var(--primary)!important;
     border-color: var(--primary)!important;;
+}
+
+.meal-plan-section {
+    background-image: url('/assets/img/meal plan.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.meal-plan-card {
+    width: 795px;
+    padding: 25px;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.meal-card-title {
+    text-transform: capitalize;
+    color: var(--white_clr);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 400;
+}
+
+.meal-card-subtitle {
+    text-transform: capitalize;
+    color: var(--white_clr);
+    text-align: center;
+    font-family: Italianno !important;
+    font-weight: 400;
+    font-size: 67px;
+}
+
+.meal-plan-card .form-check-label {
+    color: var(--white_clr);
+    font-family: Italiana !important;
+    font-size: 30px;
+}
+.meal-plan-card .form-check-input[type=radio] {
+    position: relative;
+    top: 10px;
+}
+.category-text{
+    color: var(--white_clr);
+    font-size: 30px;
+    font-family: Italiana !important;
+    text-transform: capitalize;
+}
+.meal-category{
+    display: inline-flex;
 }
 /* media query */
 @media (max-screen:804px) {
