@@ -20,6 +20,9 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function() {
         Route::resource('business-settings', 'BusinessSettingController');
 
         Route::resource('meal-category', 'MealCategoryController');
+
+        Route::resource('meal-type', 'MealTypeController');
+
     });
 });
 
