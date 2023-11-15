@@ -90,7 +90,7 @@
                                     </select>
                                 </div>
                             </div>
-                            @php($about_text = \App\Models\BusinessSetting::where('key', 'aboutus_text')->first())
+                            @php($about_text = \App\Models\BusinessSetting::where('key', 'about_text')->first())
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label class="form-label"
@@ -114,7 +114,7 @@
                                     <center class="py-3 my-auto">
                                         <img class="img--vertical" id="viewer"
                                             onerror="this.src='{{ asset('assets/admin/images/img2.jpg') }}'"
-                                            src="{{ asset('storage/app/public/business/' . $logo) }}"
+                                            src="{{ asset('storage/business/' . $logo) }}"
                                             alt="logo image" />
                                     </center>
                                     <div class="custom-file">
@@ -138,7 +138,7 @@
                                     <center class="py-3 my-auto">
                                         <img class="img--110" id="iconViewer"
                                             onerror="this.src='{{ asset('assets/admin/images/img2.jpg') }}'"
-                                            src="{{ asset('storage/app/public/business/' . $icon) }}"
+                                            src="{{ asset('storage/business/' . $icon) }}"
                                             alt="Fav icon" />
                                     </center>
                                     <div class="custom-file">

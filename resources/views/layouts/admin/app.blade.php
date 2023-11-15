@@ -60,7 +60,17 @@
     <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/sum().js') ?>"></script>
     <script type="text/javascript" src="<?php echo asset('assets/admin/libs/datatable/dataTables.checkboxes.min.js') ?>"></script>
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
-
+    {!! Toastr::message() !!}
+    @if ($errors->any())
+        <script>
+            @foreach($errors->all() as $error)
+            toastr.error('{{$error}}', Error, {
+                CloseButton: true,
+                ProgressBar: true
+            });
+            @endforeach
+        </script>
+    @endif
     <script>
         if (@json(Session::get('success'))) {
             toastr.success(@json(Session::get('success')), {

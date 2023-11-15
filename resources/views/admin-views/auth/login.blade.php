@@ -41,7 +41,7 @@
 
                   <div class="d-flex align-items-center justify-content-between mb-4">
                     <div class="form-check">
-                      <input class="form-check-input primary" type="checkbox" name="remember" value="" id="flexCheckChecked" checked>
+                      <input class="form-check-input primary" type="checkbox" name="remember" value="1" id="flexCheckChecked">
                       <label class="form-check-label text-dark" for="flexCheckChecked">
                         {{translate('messages.remember_me')}}
                       </label>
