@@ -1,7 +1,14 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary navbar-fixed-top">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        @php
+            $logo = \App\Models\BusinessSetting::where('key', 'logo')->first();
+        @endphp
+        <a class="navbar-brand" href="/">
+            @if ($logo)
+            <img src="{{ asset('storage/business/' . $logo->value) }}" alt="SmartNest Logo" width="100">
+            @else
             <img src="{{ asset('assets/img/logo.png') }}" alt="SmartNest Logo" width="100">
+            @endif
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

@@ -170,4 +170,8 @@
   'meal_items' => 'Meal items',
   'edit_meal' => 'Edit meal',
   'meal_updated_successfully' => 'Meal updated successfully',
+  'meal_deleted_successfully' => 'Meal deleted successfully',
+  'generate_meals' => 'Generate meals',
+  'meal_list' => 'Meal list',
+  'no_meal_plans_to_show' => 'No meal plans to show',
 );

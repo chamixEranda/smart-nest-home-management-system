@@ -6,7 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    @php
+        $favicon = \App\Models\BusinessSetting::where('key', 'logo')->first();
+    @endphp
+    @if ($favicon)
+    <link rel="shortcut icon" type="image/png" href="{{ asset('storage/business/' . $favicon->value) }}" />
+    @else
     <link rel="shortcut icon" type="image/png" href="{{ asset('assets/img/favicon.png') }}" />
+    @endif
+    
     <title>{{ config('app.name', 'SmartNest') }}</title>
     <!--bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
