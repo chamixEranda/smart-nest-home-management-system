@@ -19979,6 +19979,9 @@ fieldset:disabled .btn {
 .img--110 {
     width: 110px;
 }
+.img--200{
+    width: 200px;
+}
 .img--65, .img--60, .img--70, .img--75, .img--80, .img--90, .img--100, .img--110, .img--120, .img--130, .img--200 {
     aspect-ratio: 1;
     -o-object-fit: cover;

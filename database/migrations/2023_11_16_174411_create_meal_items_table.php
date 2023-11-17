@@ -11,13 +11,14 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('meal_plans', function (Blueprint $table) {
+        Schema::create('meal_items', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->nullable();
-            $table->integer('category_id')->nullable();
+            $table->integer('meal_categroy_id')->nullable();
+            $table->integer('meal_type_id')->nullable();
+            $table->string('image')->nullable();
             $table->string('name')->nullable();
-            $table->float('calories', 8, 2)->default(0);
-            $table->text('note')->nullable();
+            $table->text('description')->nullable();
+            $table->boolean('is_active')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('meal_plans');
+        Schema::dropIfExists('meal_items');
     }
 };
