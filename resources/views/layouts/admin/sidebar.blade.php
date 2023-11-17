@@ -73,11 +73,11 @@
           </a>
         </li>
         <li class="sidebar-item">
-          <a class="sidebar-link" href="{{ route('admin.business-settings.index') }}" aria-expanded="false">
+          <a class="sidebar-link" href="{{ route('admin.meal-item.index') }}" aria-expanded="false">
             <span>
               <i class="fa fa-sitemap"></i>
             </span>
-            <span class="hide-menu">{{ translate('messages.item') }}</span>
+            <span class="hide-menu">{{ translate('messages.meal_item') }}</span>
           </a>
         </li>
       </ul>

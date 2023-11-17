@@ -23,6 +23,8 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function() {
 
         Route::resource('meal-type', 'MealTypeController');
 
+        Route::resource('meal-item', 'MealController');
+
     });
 });
 
