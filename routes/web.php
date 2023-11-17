@@ -49,6 +49,7 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('recipes', 'Website\RecipeController');
 
         Route::get('/create-meal-plan', 'Website\MealplanController@createMealPlan')->name('create-meal-plan');
+        Route::post('/meal-plan', 'Website\MealplanController@generateMealPlan')->name('meal-plan');
 
         Route::get('grocery/add-ingredients','Website\GroceryController@addIngredients')->name('grocery.add-ingredients');
         Route::post('grocery/update-stock/{id}/{action}', 'Website\GroceryController@updateStock')->name('grocery.update-stock');

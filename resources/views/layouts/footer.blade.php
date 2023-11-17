@@ -49,7 +49,7 @@
             Useful links
           </h6>
           <p>
-            <a href="#!" class="text-reset">{{ translate('messages.pricing') }}</a>
+            <a href="{{ route('pricing-checkout') }}" class="text-reset">{{ translate('messages.pricing') }}</a>
           </p>
           <p>
             <a href="#!" class="text-reset">{{ translate('messages.contatc_us') }}</a>
