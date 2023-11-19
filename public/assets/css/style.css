@@ -746,6 +746,14 @@ body{
 .meal-card .by-name {
     font-weight: 700;
 }
+
+.relation-section{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url('/assets/img/family member.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
 /* media query */
 @media (max-screen:804px) {
     .pricing-grid{
