@@ -29,7 +29,7 @@ class MealplanController extends Controller
 
     public function generateMealPlan(Request $request)
     {
-        $lims_meal_list = MealItem::where('meal_categroy_id',$request->input('meal_category'))
+        $lims_meal_list = MealItem::active()->where('meal_categroy_id',$request->input('meal_category'))
         ->where('meal_type_id', $request->input('meal_type'))
         ->get();
 

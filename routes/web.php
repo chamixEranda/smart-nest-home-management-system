@@ -29,13 +29,20 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
 
     Route::get('contact-us', 'Website\HomeController@contact_us')->name('contact-us');
 
+    // meal planning
     Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
         Route::get('/', 'Website\MealplanController@index')->name('index');
         Route::get('/meal', 'Website\MealplanController@mealPage')->name('meal');
     });
 
+    // finance management
     Route::prefix('finance')->name('finance.')->group(function () {
         Route::get('/', 'Website\FinanceController@index')->name('index');
+    });
+
+    // relationship management
+    Route::prefix('relationship-management')->name('relationship-management.')->group(function () {
+        Route::get('/', 'Website\RelationshipManagementController@index')->name('index');
     });
 });
 
@@ -45,6 +52,7 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::post('/pricing-checkout/store','Website\SubscriptionController@checkoutStore')->name('pricing-checkout.store');
 
+    // meal planning
     Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
         Route::resource('recipes', 'Website\RecipeController');
 
@@ -56,11 +64,19 @@ Route::group(['middleware' => 'auth'], function () {
         Route::resource('grocery', 'Website\GroceryController');
     });
 
+    // finance management
     Route::prefix('finance')->name('finance.')->group(function () {
         Route::get('budgeting', 'Website\FinanceController@budgetingIndex')->name('budgeting');
         Route::get('incomes-&-expenses', 'Website\FinanceController@budgetTracker')->name('incomes-&-expenses');
         Route::get('transactions', 'Website\FinanceController@transactionsIndex')->name('transactions');
 
+    });
+
+    // relationship management
+    Route::prefix('relationship-management')->name('relationship-management.')->group(function () {
+        Route::get('/', 'Website\RelationshipManagementController@index')->name('index');
+
+        Route::resource('family-member', 'Website\FamilyMemberController');
     });
 
 });
