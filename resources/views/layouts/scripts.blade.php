@@ -36,6 +36,12 @@
         }
     });
 
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+        });
+    });
+
     function form_alert(id, message) {
         Swal.fire({
             title: '{{ translate('messages.Are you sure?') }}',
