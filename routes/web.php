@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     // finance management
     Route::prefix('finance')->name('finance.')->group(function () {
         Route::get('budgeting', 'Website\FinanceController@budgetingIndex')->name('budgeting');
+        Route::get('savings', 'Website\FinanceController@savingIndex')->name('savings');
 
         Route::get('income-category', 'Website\FinanceController@incomeCategoryIndex')->name('income-category');
         Route::post('income-category/store', 'Website\FinanceController@incomeCategoryStore')->name('income-category.store');
@@ -74,6 +75,10 @@ Route::group(['middleware' => 'auth'], function () {
         Route::delete('income-category/{id}', 'Website\FinanceController@incomeCategoryDelete')->name('income-category.destroy');
 
         Route::resource('income', 'Website\IncomeController');
+
+        Route::resource('expense-category', 'Website\ExpenseCategoryController');
+
+        Route::resource('expense', 'Website\ExpenseController');
 
         Route::get('transactions', 'Website\FinanceController@transactionsIndex')->name('transactions');
 

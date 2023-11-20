@@ -24,11 +24,11 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="text-uppercase">{{ translate('messages.income_category') }}</h2>
+                    <h2 class="text-uppercase">{{ translate('messages.expense_category') }}</h2>
                 </div>
                 <div class="col-md-6">
                     <button class="btn btn-primary float-end mt-1" data-bs-toggle="modal" type="button"
-                        data-bs-target="#addIncomeCategory"><i class="fas fa-plus"></i> {{
+                        data-bs-target="#addExpenseCategory"><i class="fas fa-plus"></i> {{
                         translate('messages.add_new_category') }}</button>
                 </div>
             </div>
@@ -39,14 +39,14 @@
                     <tr>
                         <td>{{ translate('messages.#') }}</td>
                         <td>{{ translate('messages.category_name') }}</td>
-                        <td class="text-end">{{ translate('messages.total_incomes') }}</td>
+                        <td class="text-end">{{ translate('messages.total_expenses') }}</td>
                         <td class="text-center">{{ translate('messages.action') }}</td>
                     </tr>
                 </thead>
                 <tbody>
                     @forelse ($lims_category_list as $key => $category)
                     @php
-                        $total_incomes = App\Models\Income::where('income_category_id', $category->id)->sum('amount');
+                        $total_incomes = App\Models\Expense::where('expense_category_id', $category->id)->sum('amount');
                     @endphp
                     <tr>
                         <td>{{ $key + 1 }}</td>
@@ -62,7 +62,7 @@
                                     title="{{translate('messages.delete')}} {{translate('messages.category')}}"><i
                                         class="fas fa-trash fa-2x"></i>
                                 </a>
-                                <form action="{{route('finance.income-category.destroy',[$category['id']])}}"
+                                <form action="{{route('finance.expense-category.destroy',[$category['id']])}}"
                                     method="post" id="category-{{$category['id']}}">
                                     @csrf @method('delete')
                                 </form>
@@ -85,18 +85,18 @@
         </div>
     </div>
 
-    <div class="modal fade" id="addIncomeCategory" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    <div class="modal fade" id="addExpenseCategory" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">{{ translate('messages.add_income_category') }}
+                    <h5 class="modal-title" id="exampleModalToggleLabel">{{ translate('messages.add_expense_category') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <form action="javascript:" method="POST" autocomplete="off" id="add-incomCategory-form"
+                        <form action="javascript:" method="POST" autocomplete="off" id="add-expenseCategory-form"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
@@ -120,7 +120,7 @@
         </div>
     </div>
 
-    <div class="modal fade" id="editIncomeCategory" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    <div class="modal fade" id="editExpenseCategory" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
@@ -133,7 +133,8 @@
                     <div class="row">
                         <form action="javascript:" autocomplete="off" id="edit-incomCategory-form"
                             enctype="multipart/form-data">
-                            @csrf
+                            <input type="hidden" name="_method" value="PUT">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="id" value="">
                             <div class="form-group mb-3">
                                 <label>{{ translate('messages.name') }} <small class="text-danger">* </small></label>
@@ -159,17 +160,18 @@
 @endsection
 @push('scripts')
 <script>
-    $('#add-incomCategory-form').on('submit', function() {
+    var edit_id;
+    $('#add-expenseCategory-form').on('submit', function() {
         $('#add-recipe-btn').css('display', 'none');
         $('.buttonPreloader').css('display', 'block');
-        var formData = new FormData($('#add-incomCategory-form')[0]);
+        var formData = new FormData($('#add-expenseCategory-form')[0]);
         $.ajax({
             headers:
             {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: "POST",
-            url: '{{ route("finance.income-category.store") }}',
+            url: '{{ route("finance.expense-category.store") }}',
             data: formData,
             processData: false,
             contentType: false,
@@ -205,9 +207,10 @@
     });
 
     function editIncomeCategory(id, name) {
+        edit_id = id;
       $('#edit-incomCategory-form input[name="name"]').val(name);
       $('#edit-incomCategory-form input[name="id"]').val(id);
-      $('#editIncomeCategory').modal('show');
+      $('#editExpenseCategory').modal('show');
     }
 
     $('#edit-incomCategory-form').on('submit', function() {
@@ -220,7 +223,7 @@
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: "POST",
-            url: '{{ route("finance.income-category.update") }}',
+            url: '/finance/expense-category/'+edit_id,
             data: formData,
             processData: false,
             contentType: false,

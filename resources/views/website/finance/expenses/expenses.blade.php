@@ -24,12 +24,12 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-6">
-                    <h2 class="text-uppercase">{{ translate('messages.incomes') }}</h2>
+                    <h2 class="text-uppercase">{{ translate('messages.expenses') }}</h2>
                 </div>
                 <div class="col-md-6">
                     <button class="btn btn-primary float-end mt-1" data-bs-toggle="modal" type="button"
-                        data-bs-target="#addIncomeCategory"><i class="fas fa-plus"></i> {{
-                        translate('messages.add_new_income') }}</button>
+                        data-bs-target="#addExpenseModal"><i class="fas fa-plus"></i> {{
+                        translate('messages.add_new_expense') }}</button>
                 </div>
             </div>
         </div>
@@ -47,26 +47,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($lims_income_list as $key => $income)
+                    @forelse ($lims_expenses_list as $key => $expense)
                         <tr>
                             <td>{{ $key + 1 }}</td>
-                            <td>{{ $income->category->name }}</td>
-                            <td>{{ $income->name }}</td>
-                            <td>{!! $income->purpose !!}</td>
-                            <td>{{ $income->date }}</td>
-                            <td>{{ number_format($income->amount,2) }}</td>
+                            <td>{{ $expense->category->name }}</td>
+                            <td>{{ $expense->name }}</td>
+                            <td>{!! $expense->purpose !!}</td>
+                            <td>{{ $expense->date }}</td>
+                            <td>{{ number_format($expense->amount,2) }}</td>
                             <td>
                                 <div class="">
                                     <a href="javascript:"
-                                        onclick="editIncome({{ $income->id }},{{ $income->income_category_id }},'{{ $income->name }}','{{ $income->purpose }}','{{ $income->method }}','{{ $income->date }}', {{ $income->amount }})"
+                                        onclick="editExpense({{ $expense->id }},{{ $expense->expense_category_id }},'{{ $expense->name }}','{{ $expense->purpose }}','{{ $expense->method }}','{{ $expense->date }}', {{ $expense->amount }})"
                                         class="text-dark mx-1"><i class="fas fa-pencil-alt fa-2x"></i></a>
                                     <a class="text-danger mx-1" href="javascript:"
-                                        onclick="form_alert('income-{{$income['id']}}','{{ translate('Want to delete this income ?') }}')"
-                                        title="{{translate('messages.delete')}} {{translate('messages.income')}}"><i
+                                        onclick="form_alert('expense-{{$expense['id']}}','{{ translate('Want to delete this expense ?') }}')"
+                                        title="{{translate('messages.delete')}} {{translate('messages.expense')}}"><i
                                             class="fas fa-trash fa-2x"></i>
                                     </a>
-                                    <form action="{{route('finance.income.destroy',[$income['id']])}}"
-                                        method="post" id="income-{{$income['id']}}">
+                                    <form action="{{route('finance.expense.destroy',[$expense['id']])}}"
+                                        method="post" id="expense-{{$expense['id']}}">
                                         @csrf @method('delete')
                                     </form>
                                 </div>
@@ -81,30 +81,30 @@
             </table>
             <div class="col-sm-auto">
                 <div class="d-flex justify-content-center justify-content-sm-end">
-                    {!! $lims_income_list->links() !!}
+                    {!! $lims_expenses_list->links() !!}
                 </div>
             </div>
         </div>
     </div>
 
-    <div class="modal fade" id="addIncomeCategory" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    <div class="modal fade" id="addExpenseModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-lg modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">{{ translate('messages.add_income_category') }}
+                    <h5 class="modal-title" id="exampleModalToggleLabel">{{ translate('messages.add_expense') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <form action="javascript:" method="POST" autocomplete="off" id="add-income-form"
+                        <form action="javascript:" method="POST" autocomplete="off" id="add-expense-form"
                             enctype="multipart/form-data">
                             @csrf
                             <div class="form-group mb-3">
                                 <label class="form-label">{{ translate('messages.income_category') }} <small
                                         class="text-danger">* </small></label>
-                                <select class="form-select" name="income_category_id"
+                                <select class="form-select" name="expense_category_id"
                                     aria-label="Default select example" required>
                                     @foreach ($lims_category_list as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -156,26 +156,26 @@
         </div>
     </div>
 
-    <div class="modal fade" id="editIncome" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+    <div class="modal fade" id="editExpenseModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
         tabindex="-1">
         <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">{{ translate('messages.add_income_category') }}
+                    <h5 class="modal-title" id="exampleModalToggleLabel">{{ translate('messages.update_expense') }}
                     </h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">
-                        <form action="javascript:" autocomplete="off" id="edit-income-form"
+                        <form action="javascript:" autocomplete="off" id="edit-expense-form"
                             enctype="multipart/form-data">
                             <input type="hidden" name="_method" value="PUT">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="id" value="">
                             <div class="form-group mb-3">
-                                <label class="form-label">{{ translate('messages.income_category') }} <small
+                                <label class="form-label">{{ translate('messages.expense_category') }} <small
                                         class="text-danger">* </small></label>
-                                <select class="form-select" name="income_category_id"
+                                <select class="form-select" name="expense_category_id"
                                     aria-label="Default select example" required>
                                     @foreach ($lims_category_list as $category)
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -201,9 +201,8 @@
                                     <input type="date" class="form-control" name="date" required>
                                 </div>
                                 <div class="col form-group">
-                                    <label>{{ translate('messages.method') }} <small class="text-danger">*
-                                        </small></label>
-                                    <input type="text" class="form-control" name="method" required>
+                                    <label>{{ translate('messages.method') }}</label>
+                                    <input type="text" class="form-control" name="method">
                                 </div>
                             </div>
                             <div class="form-group mb-3">
@@ -240,17 +239,17 @@
 
     var edit_id;
 
-  $('#add-income-form').on('submit', function() {
+  $('#add-expense-form').on('submit', function() {
         $('#add-recipe-btn').css('display', 'none');
         $('.buttonPreloader').css('display', 'block');
-        var formData = new FormData($('#add-income-form')[0]);
+        var formData = new FormData($('#add-expense-form')[0]);
         $.ajax({
             headers:
             {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
             type: "POST",
-            url: '{{ route("finance.income.store") }}',
+            url: '{{ route("finance.expense.store") }}',
             data: formData,
             processData: false,
             contentType: false,
@@ -285,28 +284,28 @@
         });
     });
 
-    function editIncome(id, category_id, name, purpose, method, date, amount) {
+    function editExpense(id, category_id, name, purpose, method, date, amount) {
         edit_id = id;
-      $('#edit-income-form input[name="name"]').val(name);
-      $('#edit-income-form input[name="method"]').val(method);
-      $('#edit-income-form input[name="date"]').val(date);
-      $('#edit-income-form input[name="amount"]').val(amount);
-      $('#edit-income-form input[name="id"]').val(id);
-      $('#edit-income-form select[name="income_category_id"]').val(category_id);
-      $('#edit-income-form textarea[name="purpose"]').html(purpose);
-      $('#editIncome').modal('show');
+      $('#edit-expense-form input[name="name"]').val(name);
+      $('#edit-expense-form input[name="method"]').val(method);
+      $('#edit-expense-form input[name="date"]').val(date);
+      $('#edit-expense-form input[name="amount"]').val(amount);
+      $('#edit-expense-form input[name="id"]').val(id);
+      $('#edit-expense-form select[name="expense_category_id"]').val(category_id);
+      $('#edit-expense-form textarea[name="purpose"]').html(purpose);
+      $('#editExpenseModal').modal('show');
     }
 
-    $('#edit-income-form').on('submit', function() {
+    $('#edit-expense-form').on('submit', function() {
         $('#edit-income-btn').css('display', 'none');
         $('.buttonPreloader').css('display', 'block');
-        var formData = new FormData($('#edit-income-form')[0]);
+        var formData = new FormData($('#edit-expense-form')[0]);
         $.ajax({
             headers:
             {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             },
-            url: '/finance/income/'+edit_id,
+            url: '/finance/expense/'+edit_id,
             type: "POST",
             dataType: 'json',
             data: formData,
