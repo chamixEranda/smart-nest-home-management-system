@@ -226,4 +226,12 @@
   'credit' => 'Credit',
   'debit' => 'Debit',
   'balance' => 'Balance',
+  'finance' => 'Finance',
+  'Expense Overview' => 'Expense Overview',
+  'Income Overview' => 'Income Overview',
+  'color' => 'Color',
+  'income_category_updated_successfully' => 'Income category updated successfully',
+  'Incomes & Expenses Overview' => 'Incomes & Expenses Overview',
+  'calender' => 'Calender',
+  'calendar' => 'Calendar',
 );

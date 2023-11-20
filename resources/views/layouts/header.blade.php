@@ -36,9 +36,9 @@
                 </li>
                 
                 @if (auth()->check())
-                <li class="nav-item">
+                <!--<li class="nav-item">
                     <a class="nav-link" href="{{ route('login') }}">Profile</a>
-                </li>
+                </li>-->
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
                         Log Out</a></li>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class IncomeCategory extends Model
 {
-    protected $fillable = ['user_id','name'];
+    protected $fillable = ['user_id','name','color'];
 
     public function scopeActive($query)
     {
