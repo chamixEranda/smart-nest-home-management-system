@@ -73,6 +73,8 @@ Route::group(['middleware' => 'auth'], function () {
         Route::post('income-category/update', 'Website\FinanceController@incomeCategoryUpdate')->name('income-category.update');
         Route::delete('income-category/{id}', 'Website\FinanceController@incomeCategoryDelete')->name('income-category.destroy');
 
+        Route::resource('income', 'Website\IncomeController');
+
         Route::get('transactions', 'Website\FinanceController@transactionsIndex')->name('transactions');
 
     });

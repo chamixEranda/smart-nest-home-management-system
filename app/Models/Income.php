@@ -7,5 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Income extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'income_category_id',
+        'name',
+        'purpose',
+        'method',
+        'date',
+        'amount'
+    ];
+
+    public function category()
+    {
+    	return $this->belongsTo("App\Models\IncomeCategory", 'income_category_id', 'id');
+    }
 }
