@@ -67,6 +67,10 @@ Route::group(['middleware' => 'auth'], function () {
     // finance management
     Route::prefix('finance')->name('finance.')->group(function () {
         Route::get('budgeting', 'Website\FinanceController@budgetingIndex')->name('budgeting');
+        Route::get('budgeting/json_expense_by_category', 'Website\FinanceController@json_expense_by_category')->name('budgeting.json_expense_by_category');
+        Route::get('budgeting/json_income_by_category', 'Website\FinanceController@json_income_by_category')->name('budgeting.json_income_by_category');
+
+
         Route::get('savings', 'Website\FinanceController@savingIndex')->name('savings');
 
         Route::get('income-category', 'Website\FinanceController@incomeCategoryIndex')->name('income-category');
@@ -88,6 +92,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::prefix('relationship-management')->name('relationship-management.')->group(function () {
         Route::get('/', 'Website\RelationshipManagementController@index')->name('index');
 
+        Route::get('family-member/calendar', 'Website\FamilyMemberController@user_calender')->name('family-member.calendar');
         Route::resource('family-member', 'Website\FamilyMemberController');
     });
 

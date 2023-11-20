@@ -21,7 +21,58 @@ class FinanceController extends Controller
 
     public function budgetingIndex()
     {
-        return view('website.finance.budgeting');
+        $expensesData = Expense::where('user_id', auth()->user()->id)->get();
+        $incomeData = Income::where('user_id', auth()->user()->id)->get();
+
+        $labels = $expensesData->pluck('date');
+
+        $expensesValues = $expensesData->pluck('amount');
+        $incomeValues = $incomeData->pluck('amount');
+
+        return view('website.finance.budgeting',compact('labels', 'expensesValues', 'incomeValues'));
+    }
+
+    public function json_expense_by_category() 
+    {
+        $transactions = Expense::where('user_id', auth()->user()->id)
+            ->selectRaw('expense_category_id, IFNULL(SUM(amount), 0) as amount')
+            ->with('category')
+            ->groupBy('expense_category_id')
+            ->get();
+        $category = array();
+        $colors   = array();
+        $amounts  = array();
+        $data     = array();
+
+        foreach ($transactions as $transaction) {
+            array_push($category, $transaction->category->name);
+            array_push($colors, $transaction->category->color);
+            array_push($amounts, (double) $transaction->amount);
+        }
+
+        echo json_encode(array('amounts' => $amounts, 'category' => $category, 'colors' => $colors));
+
+    }
+
+    public function json_income_by_category()
+    {
+        $transactions = Income::where('user_id', auth()->user()->id)
+            ->selectRaw('income_category_id, IFNULL(SUM(amount), 0) as amount')
+            ->with('category')
+            ->groupBy('income_category_id')
+            ->get();
+        $category = array();
+        $colors   = array();
+        $amounts  = array();
+        $data     = array();
+
+        foreach ($transactions as $transaction) {
+            array_push($category, $transaction->category->name);
+            array_push($colors, $transaction->category->color);
+            array_push($amounts, (double) $transaction->amount);
+        }
+
+        echo json_encode(array('amounts' => $amounts, 'category' => $category, 'colors' => $colors));
     }
 
     public function incomeCategoryIndex()

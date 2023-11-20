@@ -39,6 +39,7 @@
                     <tr>
                         <td>{{ translate('messages.#') }}</td>
                         <td>{{ translate('messages.category_name') }}</td>
+                        <td>{{ translate('messages.color') }}</td>
                         <td class="text-end">{{ translate('messages.total_expenses') }}</td>
                         <td class="text-center">{{ translate('messages.action') }}</td>
                     </tr>
@@ -51,11 +52,12 @@
                     <tr>
                         <td>{{ $key + 1 }}</td>
                         <td>{{ $category->name }}</td>
+                        <td><div class="rounded-circle color-circle" style="background:{{ $category->color }}"></div></td>
                         <td class="text-end">{{ number_format($total_incomes,2) }}</td>
                         <td>
                             <div class="text-center">
                                 <a href="javascript:"
-                                    onclick="editIncomeCategory({{ $category->id }},'{{ $category->name }}')"
+                                    onclick="editIncomeCategory({{ $category->id }},'{{ $category->name }}','{{ $category->color }}')"
                                     class="text-dark mx-1"><i class="fas fa-pencil-alt fa-2x"></i></a>
                                 <a class="text-danger mx-1" href="javascript:"
                                     onclick="form_alert('category-{{$category['id']}}','{{ translate('Want to delete this category ?') }}')"
@@ -103,6 +105,10 @@
                                 <label>{{ translate('messages.name') }} <small class="text-danger">* </small></label>
                                 <input type="text" class="form-control" name="name" required>
                             </div>
+                            <div class="form-group mb-3">
+                                <label>{{ translate('messages.color') }} <small class="text-danger">* </small></label>
+                                <input type="color" class="form-control" name="color" required>
+                            </div>
                             <div class="form-group">
                                 <span class="buttonPreloader float-end rounded-0 btn outline my-0 w-50"
                                     style="display: none">
@@ -139,6 +145,10 @@
                             <div class="form-group mb-3">
                                 <label>{{ translate('messages.name') }} <small class="text-danger">* </small></label>
                                 <input type="text" class="form-control" name="name" required>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label>{{ translate('messages.color') }} <small class="text-danger">* </small></label>
+                                <input type="color" class="form-control" name="color" required>
                             </div>
                             <div class="form-group">
                                 <span class="buttonPreloader float-end rounded-0 btn outline my-0 w-50"
@@ -206,10 +216,11 @@
         });
     });
 
-    function editIncomeCategory(id, name) {
+    function editIncomeCategory(id, name, color) {
         edit_id = id;
       $('#edit-incomCategory-form input[name="name"]').val(name);
       $('#edit-incomCategory-form input[name="id"]').val(id);
+      $('#edit-incomCategory-form input[name="color"]').val(color);
       $('#editExpenseCategory').modal('show');
     }
 
