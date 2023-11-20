@@ -42,19 +42,20 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse ($all_transaction_list as $key => $transaction)
+                    <?php 
+                        $i=0;
+                    ?>
+                    @forelse ($all_transaction_list as $transaction)
                     @php
                         if($transaction->type == 'Income') {
                             $balance += $transaction->amount;
-                            $debit = 0;
                         }
                         else {
                             $balance -= $transaction->amount;
-                            $credit = 0;
                         }
                     @endphp
                         <tr>
-                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $i + 1 }}</td>
                             <td>{{ $transaction->date }}</td>
                             <td>{{ $transaction->type }}</td>
                             <td>{{ $transaction->category }}</td>
@@ -64,7 +65,7 @@
                             @else
                             <td class="text-end">- {{ number_format($transaction->amount,2) }}</td>
                             @endif
-                            
+                            <?php $i++; ?>
                         </tr>
                     @empty
                     <tr>
