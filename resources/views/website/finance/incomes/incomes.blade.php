@@ -47,30 +47,36 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($lims_income_list as $key => $income)
-                        <td>{{ $key + 1 }}</td>
-                        <td>{{ $income->category->name }}</td>
-                        <td>{{ $income->name }}</td>
-                        <td>{!! $income->purpose !!}</td>
-                        <td>{{ $income->date }}</td>
-                        <td>{{ $income->amount }}</td>
-                        <td>
-                            <div class="">
-                                <a href="javascript:"
-                                    onclick="editIncome({{ $income->id }},{{ $income->income_category_id }},'{{ $income->name }}','{{ $income->purpose }}','{{ $income->method }}','{{ $income->date }}', {{ $income->amount }})"
-                                    class="text-dark mx-1"><i class="fas fa-pencil-alt fa-2x"></i></a>
-                                <a class="text-danger mx-1" href="javascript:"
-                                    onclick="form_alert('income-{{$income['id']}}','{{ translate('Want to delete this income ?') }}')"
-                                    title="{{translate('messages.delete')}} {{translate('messages.income')}}"><i
-                                        class="fas fa-trash fa-2x"></i>
-                                </a>
-                                <form action="{{route('finance.income.destroy',[$income['id']])}}"
-                                    method="post" id="income-{{$income['id']}}">
-                                    @csrf @method('delete')
-                                </form>
-                            </div>
-                        </td>
-                    @endforeach
+                    @forelse ($lims_income_list as $key => $income)
+                        <tr>
+                            <td>{{ $key + 1 }}</td>
+                            <td>{{ $income->category->name }}</td>
+                            <td>{{ $income->name }}</td>
+                            <td>{!! $income->purpose !!}</td>
+                            <td>{{ $income->date }}</td>
+                            <td>{{ number_format($income->amount,2) }}</td>
+                            <td>
+                                <div class="">
+                                    <a href="javascript:"
+                                        onclick="editIncome({{ $income->id }},{{ $income->income_category_id }},'{{ $income->name }}','{{ $income->purpose }}','{{ $income->method }}','{{ $income->date }}', {{ $income->amount }})"
+                                        class="text-dark mx-1"><i class="fas fa-pencil-alt fa-2x"></i></a>
+                                    <a class="text-danger mx-1" href="javascript:"
+                                        onclick="form_alert('income-{{$income['id']}}','{{ translate('Want to delete this income ?') }}')"
+                                        title="{{translate('messages.delete')}} {{translate('messages.income')}}"><i
+                                            class="fas fa-trash fa-2x"></i>
+                                    </a>
+                                    <form action="{{route('finance.income.destroy',[$income['id']])}}"
+                                        method="post" id="income-{{$income['id']}}">
+                                        @csrf @method('delete')
+                                    </form>
+                                </div>
+                            </td>
+                        </tr>
+                    @empty
+                    <tr>
+                        <td colspan="7" class="text-center">{{ translate('messages.do_data_to_show') }}</td>
+                    </tr>
+                    @endforelse
                 </tbody>
             </table>
             <div class="col-sm-auto">

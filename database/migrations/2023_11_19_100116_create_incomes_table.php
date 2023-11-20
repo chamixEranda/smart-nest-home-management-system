@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('incomes', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->integer('income_category_id');
             $table->string('name')->nullable();
             $table->string('purpose')->nullable();

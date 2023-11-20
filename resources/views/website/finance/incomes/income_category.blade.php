@@ -45,10 +45,13 @@
                 </thead>
                 <tbody>
                     @forelse ($lims_category_list as $key => $category)
+                    @php
+                        $total_incomes = App\Models\Income::where('income_category_id', $category->id)->sum('amount');
+                    @endphp
                     <tr>
                         <td>{{ $key + 1 }}</td>
                         <td>{{ $category->name }}</td>
-                        <td class="text-end">1000</td>
+                        <td class="text-end">{{ number_format($total_incomes,2) }}</td>
                         <td>
                             <div class="text-center">
                                 <a href="javascript:"

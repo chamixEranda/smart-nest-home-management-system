@@ -23,7 +23,8 @@ class FinanceController extends Controller
 
     public function incomeCategoryIndex()
     {
-        $lims_category_list = IncomeCategory::active()->paginate(10);
+        $lims_category_list = IncomeCategory::where('user_id', auth()->user()->id)->active()->paginate(10);
+        
         return view('website.finance.incomes.income_category', compact('lims_category_list'));
     }
 
@@ -43,6 +44,7 @@ class FinanceController extends Controller
         DB::beginTransaction();
 
         $data = $request->all();
+        $data['user_id'] = auth()->user()->id;
         IncomeCategory::create($data);
 
         DB::commit();

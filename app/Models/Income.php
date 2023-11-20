@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Income extends Model
 {
     protected $fillable = [
+        'user_id',
         'income_category_id',
         'name',
         'purpose',
