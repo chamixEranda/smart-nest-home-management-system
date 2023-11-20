@@ -75,6 +75,10 @@ Route::group(['middleware' => 'auth'], function () {
 
         Route::resource('income', 'Website\IncomeController');
 
+        Route::resource('expense-category', 'Website\ExpenseCategoryController');
+
+        Route::resource('expense', 'Website\ExpenseController');
+
         Route::get('transactions', 'Website\FinanceController@transactionsIndex')->name('transactions');
 
     });

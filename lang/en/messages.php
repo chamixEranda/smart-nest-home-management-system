@@ -216,4 +216,10 @@
   'expense_category_created_successfully' => 'Expense category created successfully',
   'expense_category_updated_successfully' => 'Expense category updated successfully',
   'total_expenses' => 'Total expenses',
+  'add_new_expense' => 'Add new expense',
+  'expense_created_successfully' => 'Expense created successfully',
+  'Want to delete this expense ?' => 'Want to delete this expense  ',
+  'expense' => 'Expense',
+  'update_expense' => 'Update expense',
+  'expense_updated_successfully' => 'Expense updated successfully',
 );

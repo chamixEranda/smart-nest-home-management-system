@@ -175,11 +175,11 @@
             <a class="text-uppercase" href="{{ route('finance.income.index') }}">{{ translate('messages.incomes') }}</a>
         </li>
         <p class="text-uppercase mb-0 mt-2">{{ translate('messages.expense_Section') }}</p>
-        <li>
-            <a class="text-uppercase" href="#">{{ translate('messages.expense_category') }}</a>
+        <li class="{{ request()->is('finance/expense-category')  ? 'active' : ''}}">
+            <a class="text-uppercase" href="{{ route('finance.expense-category.index') }}">{{ translate('messages.expense_category') }}</a>
         </li>
-        <li>
-            <a class="text-uppercase" href="#">{{ translate('messages.expenses') }}</a>
+        <li class="{{ request()->is('finance/expense')  ? 'active' : ''}}">
+            <a class="text-uppercase" href="{{ route('finance.expense.index') }}">{{ translate('messages.expenses') }}</a>
         </li>
         <p class="text-uppercase mb-0 mt-2">{{ translate('messages.budgeting') }}</p>
         <li>
