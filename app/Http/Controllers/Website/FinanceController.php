@@ -5,10 +5,13 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\IncomeCategory;
+use App\Models\Income;
+use App\Models\ExpenseCategory;
+use App\Models\Expense;
 use Illuminate\Support\Facades\DB;
 use App\CentralLogics\Helpers;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Database\Eloquent\Collection;
 class FinanceController extends Controller
 {
     public function index()
@@ -87,6 +90,28 @@ class FinanceController extends Controller
         DB::commit();
 
         return back();
+    }
+
+    public function savingIndex()
+    {
+        $income_balance = new Collection;
+        $expense_balance = new Collection;
+        $all_transaction_list = new Collection;
+
+        $income_balance = Income::join('income_categories', 'incomes.income_category_id', '=', 'income_categories.id')
+                        ->where('incomes.user_id', auth()->user()->id)
+                        ->selectRaw("'Income' as type, incomes.date, incomes.amount, incomes.name, income_categories.name as category")
+                        ->get();
+
+        $expense_balance = Expense::join('expense_categories', 'expenses.expense_category_id', '=', 'expense_categories.id')
+                        ->where('expenses.user_id', auth()->user()->id)
+                        ->selectRaw("'Expense' as type, expenses.date, expenses.amount, expenses. name, expense_categories.name as category")
+                        ->get();
+
+        $all_transaction_list = $income_balance->concat($expense_balance)->sortByDesc('date');
+        $balance = 0;
+
+        return view('website.finance.savings', compact('all_transaction_list','balance'));
     }
 
     public function transactionsIndex()

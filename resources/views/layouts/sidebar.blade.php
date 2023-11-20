@@ -182,8 +182,8 @@
             <a class="text-uppercase" href="{{ route('finance.expense.index') }}">{{ translate('messages.expenses') }}</a>
         </li>
         <p class="text-uppercase mb-0 mt-2">{{ translate('messages.budgeting') }}</p>
-        <li>
-            <a class="text-uppercase" href="#">{{ translate('messages.savings') }}</a>
+        <li class="{{ request()->is('finance/savings')  ? 'active' : ''}}">
+            <a class="text-uppercase" href="{{ route('finance.savings') }}">{{ translate('messages.savings') }}</a>
         </li>
     </ul>
 </nav>

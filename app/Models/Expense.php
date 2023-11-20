@@ -19,6 +19,6 @@ class Expense extends Model
 
     public function category()
     {
-    	return $this->belongsTo("App\Models\IncomeCategory", 'expense_category_id', 'id');
+    	return $this->belongsTo("App\Models\ExpenseCategory", 'expense_category_id', 'id');
     }
 }

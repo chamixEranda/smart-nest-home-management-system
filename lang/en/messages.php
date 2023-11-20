@@ -222,4 +222,8 @@
   'expense' => 'Expense',
   'update_expense' => 'Update expense',
   'expense_updated_successfully' => 'Expense updated successfully',
+  'transaction_type' => 'Transaction type',
+  'credit' => 'Credit',
+  'debit' => 'Debit',
+  'balance' => 'Balance',
 );

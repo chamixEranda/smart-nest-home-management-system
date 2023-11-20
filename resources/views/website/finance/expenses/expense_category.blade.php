@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="table-responsive mt-4">
-            <table class="table">
+            <table class="table table-bordered border-dark">
                 <thead class="table-dark">
                     <tr>
                         <td>{{ translate('messages.#') }}</td>

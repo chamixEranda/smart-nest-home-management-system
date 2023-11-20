@@ -67,6 +67,7 @@ Route::group(['middleware' => 'auth'], function () {
     // finance management
     Route::prefix('finance')->name('finance.')->group(function () {
         Route::get('budgeting', 'Website\FinanceController@budgetingIndex')->name('budgeting');
+        Route::get('savings', 'Website\FinanceController@savingIndex')->name('savings');
 
         Route::get('income-category', 'Website\FinanceController@incomeCategoryIndex')->name('income-category');
         Route::post('income-category/store', 'Website\FinanceController@incomeCategoryStore')->name('income-category.store');

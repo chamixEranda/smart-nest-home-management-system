@@ -34,7 +34,7 @@
             </div>
         </div>
         <div class="table-responsive mt-4">
-            <table class="table">
+            <table class="table table-bordered border-dark">
                 <thead class="table-dark">
                     <tr>
                         <td>{{ translate('messages.#') }}</td>
@@ -130,9 +130,8 @@
                                     <input type="date" class="form-control" name="date" required>
                                 </div>
                                 <div class="col form-group">
-                                    <label>{{ translate('messages.method') }} <small class="text-danger">*
-                                        </small></label>
-                                    <input type="text" class="form-control" name="method" required>
+                                    <label>{{ translate('messages.method') }}</label>
+                                    <input type="text" class="form-control" name="method">
                                 </div>
                             </div>
                             <div class="form-group mb-3">

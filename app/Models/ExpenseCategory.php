@@ -16,6 +16,6 @@ class ExpenseCategory extends Model
 
     public function incomes()
     {
-        return $this->hasMany("App\Models\Income", 'expense_category_id');
+        return $this->hasMany("App\Models\Expense", 'expense_category_id');
     }
 }
