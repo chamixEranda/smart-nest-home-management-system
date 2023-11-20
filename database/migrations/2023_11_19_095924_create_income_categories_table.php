@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('income_categories', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('name')->nullable();
             $table->boolean('is_active')->default(1);
             $table->timestamps();
