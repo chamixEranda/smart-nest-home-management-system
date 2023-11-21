@@ -72,7 +72,7 @@
                                     </small> </p>
                             </div>
                             <div class="card-button">
-                                <a href="" class="btn-primary">Find More</a>
+                                <a href="{{ route('relationship-management.index') }}" class="btn-primary">Find More</a>
                             </div>
                         </div>
                     </a>

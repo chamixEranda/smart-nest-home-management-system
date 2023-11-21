@@ -167,6 +167,18 @@ class FinanceController extends Controller
 
     public function transactionsIndex()
     {
-        return view('website.finance.transactions');
+        $expenses = Expense::with('category')->get();
+        $totalExpenses = $expenses->sum('amount');
+
+        $categoryPercentages = $expenses->groupBy('category.name')
+        ->map(function ($categoryExpenses) use ($totalExpenses) {
+            $categoryTotal = $categoryExpenses->sum('amount');
+            return [
+                'percentage' => $categoryTotal / $totalExpenses * 100,
+                'expenses' => $categoryExpenses,
+            ];
+        });
+        $lims_expense_category_list = ExpenseCategory::with('expenses')->where('user_id', auth()->user()->id)->active()->get();
+        return view('website.finance.transactions',compact('lims_expense_category_list','categoryPercentages'));
     }
 }
