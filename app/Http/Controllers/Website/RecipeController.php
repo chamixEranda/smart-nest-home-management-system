@@ -86,7 +86,7 @@ class RecipeController extends Controller
         $new_recipe->save();
 
         foreach ($request->ingredient_name as $key => $ingredient) {
-            $check_exists_ingredient = Ingredient::whereRaw('LOWER(name) = ?', [strtolower($ingredient)])->first();
+            $check_exists_ingredient = Ingredient::whereRaw('LOWER(name) = ?', [strtolower($ingredient)])->where('user_id',auth()->user()->id)->first();
             if (!$check_exists_ingredient) {
                 $new_ingredient = new Ingredient();
                 $new_ingredient->name = $ingredient;
@@ -153,7 +153,7 @@ class RecipeController extends Controller
         $lims_recipe_data->save();
 
         foreach ($request->ingredient_name as $key => $ingredient) {
-            $check_exists_ingredient = Ingredient::whereRaw('LOWER(name) = ?', [strtolower($ingredient)])->first();
+            $check_exists_ingredient = Ingredient::whereRaw('LOWER(name) = ?', [strtolower($ingredient)])->where('user_id',auth()->user()->id)->first();
             if (!$check_exists_ingredient) {
                 $new_ingredient = new Ingredient();
                 $new_ingredient->name = $ingredient;

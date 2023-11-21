@@ -18,4 +18,9 @@ class ExpenseCategory extends Model
     {
         return $this->hasMany("App\Models\Expense", 'expense_category_id');
     }
+
+    public function user()
+    {
+    	return $this->belongsTo("App\Models\User", 'user_id', 'id');
+    }
 }

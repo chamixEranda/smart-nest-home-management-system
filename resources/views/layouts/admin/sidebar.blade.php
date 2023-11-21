@@ -80,6 +80,62 @@
             <span class="hide-menu">{{ translate('messages.meal_item') }}</span>
           </a>
         </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.recipe.index') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-hamburger"></i>
+            </span>
+            <span class="hide-menu">{{ translate('messages.recipies') }}</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.ingredient.index') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-pepper-hot"></i>
+            </span>
+            <span class="hide-menu">{{ translate('messages.ingredients') }}</span>
+          </a>
+        </li>
+        
+        <!-- Finance Section -->
+        <li class="nav-small-cap">
+          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+          <span class="hide-menu">{{ translate('messages.finance_section') }}</span>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.expense.expense-category') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-wallet"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.expense_category')  }}</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.expense.index') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-wallet"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.expenses')  }}</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.income.income-category') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-money-bill-alt"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.income_category')  }}</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.income.index') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-money-bill-alt"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.income')  }}</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- End Sidebar navigation -->

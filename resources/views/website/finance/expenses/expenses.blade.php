@@ -54,7 +54,7 @@
                             <td>{{ $expense->name }}</td>
                             <td>{!! $expense->purpose !!}</td>
                             <td>{{ $expense->date }}</td>
-                            <td>{{ number_format($expense->amount,2) }}</td>
+                            <td>{{ \App\CentralLogics\Helpers::currency_symbol().' '.number_format($expense->amount,2) }}</td>
                             <td>
                                 <div class="">
                                     <a href="javascript:"

@@ -18,6 +18,11 @@ class FamilyMember extends Model
         'is_active'
     ];
 
+    public function user()
+    {
+    	return $this->belongsTo("App\Models\User", 'user_id', 'id');
+    }
+
     public function scopeActive($query)
     {
         return $query->where('is_active', '=', 1);

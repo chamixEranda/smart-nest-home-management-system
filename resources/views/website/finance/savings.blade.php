@@ -61,9 +61,9 @@
                             <td>{{ $transaction->category }}</td>
                             <td>{{ $transaction->name }}</td>
                             @if ($transaction->type == 'Income')
-                            <td class="text-end">+ {{ number_format($transaction->amount,2) }}</td>
+                            <td class="text-end">+ {{ \App\CentralLogics\Helpers::currency_symbol().' '.number_format($transaction->amount,2) }}</td>
                             @else
-                            <td class="text-end">- {{ number_format($transaction->amount,2) }}</td>
+                            <td class="text-end">- {{ \App\CentralLogics\Helpers::currency_symbol().' '.number_format($transaction->amount,2) }}</td>
                             @endif
                             <?php $i++; ?>
                         </tr>
@@ -76,7 +76,7 @@
                 <tfoot class="tfoot active">
                     <tr>
                         <td colspan="5" class="text-end"><strong>Total Savings</strong></td>
-                        <td class="text-end"><strong>{{ number_format($balance,2) }}</strong></td>
+                        <td class="text-end"><strong>{{ \App\CentralLogics\Helpers::currency_symbol().' '.number_format($balance,2) }}</strong></td>
                     </tr>
                 </tfoot>
             </table>
