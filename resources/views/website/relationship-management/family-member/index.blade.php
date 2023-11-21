@@ -88,15 +88,15 @@
                                 }}:</strong> {{ $member->family_position }}</p>
                     </div>
                     <div class="cta-section">
-                        <a href="{{ route('relationship-management.family-member.edit',$member->id) }}" class="text-dark mx-1"><i
-                                class="fas fa-pencil-alt"></i></a>
+                        <a href="{{ route('relationship-management.family-member.edit',$member->id) }}"
+                            class="text-dark mx-1"><i class="fas fa-pencil-alt"></i></a>
                         <a class="text-dark mx-1" href="javascript:"
                             onclick="form_alert('member-{{$member['id']}}','{{ translate('Want to delete this member ?') }}')"
                             title="{{translate('messages.delete')}} {{translate('messages.member')}}"><i
                                 class="fas fa-trash"></i>
                         </a>
-                        <form action="{{route('relationship-management.family-member.destroy',[$member['id']])}}" method="post"
-                            id="member-{{$member['id']}}">
+                        <form action="{{route('relationship-management.family-member.destroy',[$member['id']])}}"
+                            method="post" id="member-{{$member['id']}}">
                             @csrf @method('delete')
                         </form>
                     </div>

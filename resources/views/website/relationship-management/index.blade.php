@@ -28,7 +28,7 @@
                 </a>
             </div>
             <div class="col">
-                <a href="{{ route('finance.incomes-&-expenses') }}">
+                <a href="{{url('relationship-management/family-member/birthdays/'.date('Y').'/'.date('m'))}}">
                     <div class="card card-cover h-100 border-0 overflow-hidden text-white rounded-5 shadow-lg"
                         style="background-image: linear-gradient(rgba(0, 0, 0, 0.527),rgba(0, 0, 0, 0.5)) ,url('assets/img/birthday.jpg');background-repeat:no-repeat;background-size:cover">
                         <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
