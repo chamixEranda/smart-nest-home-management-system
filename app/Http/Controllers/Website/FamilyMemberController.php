@@ -174,4 +174,44 @@ class FamilyMemberController extends Controller
 
         return back();
     }
+
+    public function user_calender($year, $month)
+    {
+        $start = 1;
+        $number_of_day = date('t', mktime(0, 0, 0, $month, 1, $year));
+        while($start <= $number_of_day)
+        {
+            if($start < 10)
+                $date = $year.'-'.$month.'-0'.$start;
+            else
+                $date = $year.'-'.$month.'-'.$start;
+            $query1 = array(
+                'name AS name',
+                'dob AS birthday',
+                'family_position AS position',
+            );
+            $member_data = FamilyMember::whereMonth('dob', '=', date('m', strtotime($date)))
+            ->whereDay('dob', '=', date('d', strtotime($date)))
+            ->where('user_id', auth()->user()->id)->selectRaw(implode(',', $query1))
+            ->get();
+            
+            if ($member_data->count() > 0) {
+                $member_name[$start] = $member_data[0]->name;
+                $birthday[$start] = $member_data[0]->birthday;
+                $position[$start] = $member_data[0]->position;
+            } else {
+                $member_name[$start] = null;
+                $birthday[$start] = null;
+                $position[$start] = null;
+            }
+            $start++;
+        }
+        $start_day = date('w', strtotime($year.'-'.$month.'-01')) + 1;
+        $prev_year = date('Y', strtotime('-1 month', strtotime($year.'-'.$month.'-01')));
+        $prev_month = date('m', strtotime('-1 month', strtotime($year.'-'.$month.'-01')));
+        $next_year = date('Y', strtotime('+1 month', strtotime($year.'-'.$month.'-01')));
+        $next_month = date('m', strtotime('+1 month', strtotime($year.'-'.$month.'-01')));
+
+        return view('website.relationship-management.family-member.calender',compact('member_name','birthday','position','start_day', 'year', 'month', 'number_of_day', 'prev_year', 'prev_month', 'next_year', 'next_month'));
+    }
 }

@@ -234,4 +234,10 @@
   'Incomes & Expenses Overview' => 'Incomes & Expenses Overview',
   'calender' => 'Calender',
   'calendar' => 'Calendar',
+  'Previous' => 'Previous',
+  'Next' => 'Next',
+  'birthday_calender' => 'Birthday calender',
+  'Name' => 'Name',
+  'Birthday' => 'Birthday',
+  'Family Position' => 'Family Position',
 );
