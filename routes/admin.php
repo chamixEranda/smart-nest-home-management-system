@@ -25,6 +25,15 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function() {
 
         Route::resource('meal-item', 'MealController');
 
+        Route::resource('recipe', 'RecipeController');
+        
+        Route::resource('ingredient', 'IngredientController');
+        
+        Route::get('expense-category', 'ExpenseController@expense_categories')->name('expense.expense-category');
+        Route::resource('expense', 'ExpenseController');
+
+        Route::get('income-category', 'IncomeController@income_categories')->name('income.income-category');
+        Route::resource('income', 'IncomeController');
     });
 });
 

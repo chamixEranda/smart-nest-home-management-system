@@ -90,8 +90,6 @@ Route::group(['middleware' => 'auth'], function () {
 
     // relationship management
     Route::prefix('relationship-management')->name('relationship-management.')->group(function () {
-        Route::get('/', 'Website\RelationshipManagementController@index')->name('index');
-
         Route::get('family-member/birthdays/{year}/{month}', 'Website\FamilyMemberController@user_calender')->name('family-member.calendar');
         Route::resource('family-member', 'Website\FamilyMemberController');
     });
