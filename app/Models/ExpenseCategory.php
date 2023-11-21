@@ -14,7 +14,7 @@ class ExpenseCategory extends Model
         return $query->where('is_active', '=', 1);
     }
 
-    public function incomes()
+    public function expenses()
     {
         return $this->hasMany("App\Models\Expense", 'expense_category_id');
     }
