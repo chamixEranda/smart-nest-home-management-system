@@ -45,4 +45,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function subscription()
+    {
+    	return $this->belongsTo("App\Models\Subscription", 'subscription_id', 'id');
+    }
 }

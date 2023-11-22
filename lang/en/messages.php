@@ -279,4 +279,7 @@
   'plan_updated_successfully' => 'Plan updated successfully',
   'budget' => 'Budget',
   'no_family_plans_to_show' => 'No family plans to show',
+  'family_plan_list' => 'Family plan list',
+  'users' => 'Users',
+  'user_list' => 'User list',
 );
