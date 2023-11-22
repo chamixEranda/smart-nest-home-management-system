@@ -136,6 +136,28 @@
             <span class="hide-menu">{{  translate('messages.income')  }}</span>
           </a>
         </li>
+
+        <!-- Family Section -->
+        <li class="nav-small-cap">
+          <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+          <span class="hide-menu">{{ translate('messages.family_section') }}</span>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.relationship-management.index') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-users"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.family_member')  }}</span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.relationship-management.create') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-users"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.family_plan_category')  }}</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- End Sidebar navigation -->
