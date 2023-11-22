@@ -35,7 +35,11 @@ Route::group(['namespace' => 'Admin', 'as' => 'admin.'], function() {
         Route::get('income-category', 'IncomeController@income_categories')->name('income.income-category');
         Route::resource('income', 'IncomeController');
 
+        Route::get('relationship-management/family-plans', 'FamilyController@familyPlans')->name('relationship-management.family-plans');
         Route::resource('relationship-management', 'FamilyController');
+
+        Route::resource('users', 'UserController');
+
 
     });
 });

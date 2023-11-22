@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\FamilyMember;
 use App\Models\FamilyPlanCategory;
+use App\Models\FamilyPlan;
 use App\CentralLogics\Helpers;
 use App\Models\BusinessSetting;
 use Illuminate\Support\Facades\DB;
@@ -54,6 +55,12 @@ class FamilyController extends Controller
         DB::commit();
         Toastr::success(translate('messages.successfully_created'));
         return back();
+    }
+
+    public function familyPlans()
+    {
+        $lims_family_plans = FamilyPlan::active()->get();
+        return view('admin-views.family-plans.list',compact('lims_family_plans'));
     }
 
     /**

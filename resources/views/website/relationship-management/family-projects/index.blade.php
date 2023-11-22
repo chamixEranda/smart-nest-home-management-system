@@ -82,7 +82,7 @@
             @forelse ($family_plans as $plan)
             <div class="card bg-warning-subtle mt-4">
                 <img src="{{ asset('public/documents/plans/'.$plan->image) }}" class="card-img-top" alt="..."
-                    onerror="this.src='{{ asset('assets/img/user.jpg') }}'">
+                    onerror="this.src='{{ asset('assets/img/vacation.png') }}'">
                 <div class="card-body">
                     <div class="text-section">
                         <h5 class="card-title fw-bold">{{ $plan->title }}</h5>

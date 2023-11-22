@@ -158,6 +158,24 @@
             <span class="hide-menu">{{  translate('messages.family_plan_category')  }}</span>
           </a>
         </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.relationship-management.family-plans') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-users"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.family_plans')  }}</span>
+          </a>
+        </li>
+
+        <li class="sidebar-item">
+          <a class="sidebar-link" href="{{ route('admin.users.index') }}" aria-expanded="false">
+            <span>
+              <i class="fas fa-user"></i>
+            </span>
+            <span class="hide-menu">{{  translate('messages.users')  }}</span>
+          </a>
+        </li>
       </ul>
     </nav>
     <!-- End Sidebar navigation -->
