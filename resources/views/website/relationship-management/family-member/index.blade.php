@@ -74,7 +74,7 @@
             @forelse ($family_members as $member)
             <div class="card bg-primary-subtle mt-4">
                 <img src="{{ asset('public/documents/family_members/'.$member->image) }}" class="card-img-top"
-                    alt="...">
+                    alt="..." onerror="this.src='{{ asset('assets/img/user.jpg') }}'">
                 <div class="card-body">
                     <div class="text-section">
                         <h5 class="card-title fw-bold">{{ $member->name }}</h5>
