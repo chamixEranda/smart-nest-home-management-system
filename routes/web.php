@@ -29,6 +29,8 @@ Route::group(['middlware' => 'preventBackHistory'], function() {
 
     Route::get('contact-us', 'Website\HomeController@contact_us')->name('contact-us');
 
+    Route::view('reviews', 'reviews');
+
     // meal planning
     Route::prefix('meal-planning')->name('meal-planning.')->group(function () {
         Route::get('/', 'Website\MealplanController@index')->name('index');

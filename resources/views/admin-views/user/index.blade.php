@@ -43,7 +43,7 @@
                         <td>{{ $user->dob }}</td>
                         <td>{{ $user->gender }}</td>
                         <td>{{ $user->email }}</td>
-                        <td>{{ $user->subscription->title }}</td>
+                        <td>{{ $user->subscription ? $user->subscription->title: 'N/A' }}</td>
                     </tr>
                     @endforeach
                 </tbody>

@@ -22,6 +22,12 @@
 </script>
 @endif
 <script>
+    $(window).on('load', function() { // makes sure the whole site is loaded 
+        $('#status').fadeOut(); // will first fade out the loading animation 
+        $('#preloader').delay(350).fadeOut('slow'); // will fade out the white DIV that covers the website. 
+        $('body').delay(350).css({'overflow':'visible'});
+    })
+
     var ToastMixin = Swal.mixin({
         toast: true,
         icon: 'success',
@@ -89,24 +95,16 @@
                     $('#Registerbtn').css('display', 'block');
                 }
 
-                if (data.status == false) {
+                if (data.status == true) {
                     ToastMixin.fire({
                         animation: true,
-                        icon: 'warning',
+                        icon: 'success',
                         title: data.message,
                     });
                     $('.buttonPreloader').css('display', 'none');
                     $('#Registerbtn').css('display', 'block');
+                    location.href = '/';
                 }
-
-                ToastMixin.fire({
-                    animation: true,
-                    icon: 'success',
-                    title: data.message,
-                });
-                $('.buttonPreloader').css('display', 'none');
-                $('#Registerbtn').css('display', 'block');
-                location.href = '/';
             },
             error: function (err) {
                 $('.buttonPreloader').css('display', 'none');

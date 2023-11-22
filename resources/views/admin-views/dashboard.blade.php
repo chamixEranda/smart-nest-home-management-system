@@ -127,7 +127,7 @@
                     </td>
                     <td class="border-bottom-0">
                       <div class="d-flex align-items-center gap-2">
-                        <span class="badge bg-primary rounded-3 fw-semibold">{{ $user->subscription->title }}</span>
+                        <span class="badge bg-primary rounded-3 fw-semibold">{{ $user->subscription ? $user->subscription->title: 'N/A' }}</span>
                       </div>
                     </td>
                     <td class="border-bottom-0">

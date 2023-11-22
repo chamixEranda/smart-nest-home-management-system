@@ -32,6 +32,9 @@
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 </head>
 <body>
+    <div id="preloader">
+        <div id="status">&nbsp;</div>
+    </div>
     @include('layouts.header')
     @yield('content')
     @include('layouts.footer')

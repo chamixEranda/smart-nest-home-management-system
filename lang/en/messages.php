@@ -282,4 +282,5 @@
   'family_plan_list' => 'Family plan list',
   'users' => 'Users',
   'user_list' => 'User list',
+  'reviews' => 'Reviews',
 );
